@@ -72,7 +72,7 @@ export const PostToOrganization: FC<{
         className="w-[240px]"
         removeError={true}
         label=""
-        placeholder="Select order from marketplace"
+        placeholder="Selecteer bestelling uit marktplaats"
         name="post_for"
         options={information?.map((p) => ({
           label: 'For: ' + p?.buyer?.name,

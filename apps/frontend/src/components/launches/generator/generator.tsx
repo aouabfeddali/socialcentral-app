@@ -33,9 +33,9 @@ const ThirdStep: FC<{ week: number; year: number }> = (props) => {
     <div>
       <div className="text-[20px] mb-[20px] flex flex-col items-center justify-center text-center mt-[20px] gap-[20px]">
         <img src="/success.svg" alt="success" />
-        Your posts have been scheduled as drafts.
+        Je berichten zijn als concepten ingepland.
         <br />
-        <Button onClick={gotToPosts}>Click here to see them</Button>
+        <Button onClick={gotToPosts}>Klik hier om ze te bekijken</Button>
       </div>
     </div>
   );
@@ -115,7 +115,7 @@ const SecondStep: FC<{
       <FormProvider {...form}>
         <div className={loading ? 'opacity-75' : ''}>
           <Select
-            label="Select a week"
+            label="Selecteer een week"
             name="date"
             extraForm={{
               setValueAs: (value) => {
@@ -131,9 +131,9 @@ const SecondStep: FC<{
             ))}
           </Select>
           <div className="text-[20px] mb-[20px]">
-            Click on the posts you would like to schedule.
+          Klik op de berichten die je wilt plannen.
             <br />
-            They will be saved as drafts and you can edit them later.
+            Ze worden opgeslagen als concepten en je kunt ze later bewerken.
           </div>
           <div className="grid grid-cols-3 gap-[25px] select-none cursor-pointer">
             {posts.map((post, index) => (
@@ -149,7 +149,7 @@ const SecondStep: FC<{
               >
                 {post.length > 1 && (
                   <div className="bg-forth absolute -left-[15px] -top-[15px] z-[100] p-[3px] rounded-[10px]">
-                    a thread
+                    een thread
                   </div>
                 )}
                 <div
@@ -169,7 +169,7 @@ const SecondStep: FC<{
           </div>
           <div className="mt-[20px] flex justify-end">
             <Button type="submit" disabled={!selected.length} loading={loading}>
-              Create posts
+            Maak berichten
             </Button>
           </div>
         </div>
@@ -209,14 +209,14 @@ const FirstStep: FC<{
 
       if (!post && !url) {
         form.setError('url', {
-          message: 'You need to select a post or a URL',
+          message: 'Je moet een bericht of een URL selecteren',
         });
         return;
       }
 
       if (post && url) {
         form.setError('url', {
-          message: 'You can only have a URL or a post',
+          message: 'Je kunt alleen een URL of een bericht hebben',
         });
         return;
       }
@@ -267,14 +267,14 @@ const FirstStep: FC<{
                 />
               </div>
               <div className="pb-[10px] existing-empty">
-                Or select from exising posts
+              Of selecteer uit bestaande berichten
               </div>
             </div>
           </div>
         </div>
         <div className="mt-[20px] flex justify-end">
           <Button type="submit" disabled={!!(url && post)} loading={loading}>
-            {url && post ? "You can't have both URL and a POST" : 'Next'}
+            {url && post ? "Je kunt geen URL en een BERICHT tegelijk hebben" : 'Volgende'}
           </Button>
         </div>
       </FormProvider>
@@ -324,13 +324,13 @@ export const GeneratorPopup = () => {
           ></path>
         </svg>
       </button>
-      <h1 className="text-[24px]">Generate Posts</h1>
+      <h1 className="text-[24px]">Berichten Genereren</h1>
       <div className="flex">
-        <Step title="Generate posts" step={1} currentStep={step} lastStep={3} />
+        <Step title="Berichten genereren" step={1} currentStep={step} lastStep={3} />
         <StepSpace />
-        <Step title="Confirm posts" step={2} currentStep={step} lastStep={3} />
+        <Step title="Bevestig berichten" step={2} currentStep={step} lastStep={3} />
         <StepSpace />
-        <Step title="Done" step={3} currentStep={step} lastStep={3} />
+        <Step title="Klaar" step={3} currentStep={step} lastStep={3} />
       </div>
       {step === 1 && (
         <FirstStep
@@ -368,9 +368,9 @@ export const GeneratorComponent = () => {
     if (!user?.tier?.ai) {
       if (
         await deleteDialog(
-          'You need to upgrade to use this feature',
-          'Move to billing',
-          'Payment Required'
+          'Je moet upgraden om deze functie te gebruiken',
+          'Ga naar facturering',
+          'Betaling Vereist'
         )
       ) {
         router.push('/billing');
@@ -413,7 +413,7 @@ export const GeneratorComponent = () => {
           fill="currentColor"
         />
       </svg>
-      Generate Posts
+      Berichten Genereren
     </button>
   );
 };

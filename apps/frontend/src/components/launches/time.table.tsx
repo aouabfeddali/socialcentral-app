@@ -43,8 +43,8 @@ export const TimeTable: FC<{
   const askClose = useCallback(async () => {
     if (
       !(await deleteDialog(
-        'Are you sure you want to close the window?',
-        'Yes, close'
+        'Weet je zeker dat je dit venster wilt sluiten?',
+        'Ja, sluit'
       ))
     ) {
       return;
@@ -57,7 +57,7 @@ export const TimeTable: FC<{
 
   const removeSlot = useCallback(
     (index: number) => async () => {
-      if (!(await deleteDialog('Are you sure you want to delete this slot?'))) {
+      if (!(await deleteDialog('Weet je zeker dat je dit tijdslot wilt verwijderen?'))) {
         return;
       }
       setCurrentTimes((prev) => prev.filter((_, i) => i !== index));
@@ -102,7 +102,7 @@ export const TimeTable: FC<{
 
   return (
     <div className="rounded-[4px] border border-customColor6 bg-sixth px-[16px] pb-[16px] relative w-full">
-      <TopTitle title={`Time Table Slots`} />
+      <TopTitle title={`Tijdslotschema`} />
       <button
         onClick={askClose}
         className="outline-none absolute right-[20px] top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
@@ -125,12 +125,12 @@ export const TimeTable: FC<{
       </button>
 
       <div>
-        <div className="text-[16px] font-bold mt-[16px]">Add Time Slot</div>
+        <div className="text-[16px] font-bold mt-[16px]">Tijdslot Toevoegen</div>
         <div className="flex flex-col">
           <div className="mt-[16px] flex justify-center gap-[16px]">
             <div className="w-[100px]">
               <Select
-                label="Hour"
+                label="Uur"
                 name="hour"
                 disableForm={true}
                 className="w-[100px] mt-[8px]"
@@ -147,7 +147,7 @@ export const TimeTable: FC<{
             </div>
             <div className="w-[100px]">
               <Select
-                label="Minutes"
+                label="Minuten"
                 name="minutes"
                 disableForm={true}
                 className="w-[100px] mt-[8px]"
@@ -165,7 +165,7 @@ export const TimeTable: FC<{
           </div>
           <div className="flex w-[215px] mx-auto justify-center mb-[50px]">
             <Button type="button" className="w-full" onClick={addHour}>
-              Add Slot
+            Slot Toevoegen
             </Button>
           </div>
         </div>
@@ -185,7 +185,7 @@ export const TimeTable: FC<{
       </div>
       <div className="flex w-[215px] mx-auto justify-center mb-[50px]">
         <Button type="button" className="w-full" onClick={save}>
-          Save
+        Opslaan 
         </Button>
       </div>
     </div>

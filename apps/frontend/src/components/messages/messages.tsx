@@ -120,7 +120,7 @@ export const Message: FC<{
       </div>
       <div className="flex-1 flex flex-col max-w-[534px] gap-[10px]">
         <div className="flex gap-[10px] items-center">
-          <div>{isMe ? 'Me' : person?.name}</div>
+          <div>{isMe ? 'Ik' : person?.name}</div>
           <div className="w-[6px] h-[6px] bg-customColor34 rounded-full" />
           <div className="text-[14px] text-inputText">{time}</div>
         </div>
@@ -253,7 +253,7 @@ export const Messages = () => {
               )}
             </div>
             <div className="text-[20px] flex-1">
-              {showFrom?.name || 'Noname'}
+              {showFrom?.name || 'Geen naam'}
             </div>
             <div>
               <OrderTopActions />
@@ -292,7 +292,7 @@ export const Messages = () => {
                 )}
                 disabled={!form.formState.isValid}
               >
-                Send Message
+               Bericht Versturen
               </button>
             </div>
           </div>

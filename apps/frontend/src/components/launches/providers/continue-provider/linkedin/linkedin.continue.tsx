@@ -63,16 +63,16 @@ export const LinkedinContinue: FC<{
   if (!isLoading && !data?.length) {
     return (
       <div className="text-center flex justify-center items-center text-[18px] leading-[50px] h-[300px]">
-        We couldn{"'"}t find any business connected to your LinkedIn Page.
+        We konden geen bedrijf vinden dat is gekoppeld aan je LinkedIn-pagina.
         <br />
-        Please close this dialog, create a new page, and add a new channel again.
+        Sluit dit venster, maak een nieuwe pagina aan, en voeg opnieuw een kanaal toe.
       </div>
     );
   }
 
   return (
     <div className="flex flex-col gap-[20px]">
-      <div>Select Linkedin Page:</div>
+      <div>Selecteer LinkedIn-pagina:</div>
       <div className="grid grid-cols-3 justify-items-center select-none cursor-pointer">
         {filteredData?.map(
           (p: {
@@ -100,7 +100,7 @@ export const LinkedinContinue: FC<{
       </div>
       <div>
         <Button disabled={!page} onClick={saveLinkedin}>
-          Save
+        Opslaan
         </Button>
       </div>
     </div>

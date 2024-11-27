@@ -117,10 +117,10 @@ export const LaunchesComponent = () => {
         <div className="flex flex-1 relative">
           <div className="outline-none w-full h-full grid grid-cols[1fr] md:grid-cols-[220px_minmax(0,1fr)] gap-[30px] scrollbar scrollbar-thumb-tableBorder scrollbar-track-secondary">
             <div className="bg-third p-[16px] flex flex-col gap-[24px] min-h-[100%]">
-              <h2 className="text-[20px]">Channels</h2>
+              <h2 className="text-[20px]">Kanalen</h2>
               <div className="gap-[16px] flex flex-col">
                 {sortedIntegrations.length === 0 && (
-                  <div className="text-[12px]">No channels</div>
+                  <div className="text-[12px]">Geen kanalen</div>
                 )}
                 {sortedIntegrations.map((integration) => (
                   <div
@@ -128,7 +128,7 @@ export const LaunchesComponent = () => {
                       onClick: refreshChannel(integration),
                       'data-tooltip-id': 'tooltip',
                       'data-tooltip-content':
-                        'Channel disconnected, click to reconnect.',
+                        'Kanaal is losgekoppeld, klik om opnieuw te verbinden.',
                     })}
                     key={integration.id}
                     className={clsx("flex gap-[8px] items-center", integration.refreshNeeded && 'cursor-pointer')}
@@ -185,7 +185,7 @@ export const LaunchesComponent = () => {
                         ? {
                             'data-tooltip-id': 'tooltip',
                             'data-tooltip-content':
-                              'This channel is disabled, please upgrade your plan to enable it.',
+                              'Dit kanaal is uitgeschakeld, upgrade je abonnement om het in te schakelen.',
                           }
                         : {})}
                       className={clsx(

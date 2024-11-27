@@ -38,6 +38,6 @@ export const AfterActivate = () => {
   }, []);
 
   return (
-    <>{showLoader ? <LoadingComponent /> : (<>This user is already activated,<br /><Link href="/auth/login" className="underline">Click here to go back to login</Link></>)}</>
+    <>{showLoader ? <LoadingComponent /> : (<>Deze gebruiker is al geactiveerd,<br /><Link href="/auth/login" className="underline">Klik hier om terug te gaan naar inloggen</Link></>)}</>
   );
 };

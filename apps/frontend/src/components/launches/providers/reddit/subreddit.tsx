@@ -202,7 +202,7 @@ export const Subreddit: FC<{
             error={errors?.title?.message}
             value={value.title}
             disableForm={true}
-            label="Title"
+            label="Titel"
             name="title"
             onChange={setTitle}
           />
@@ -253,7 +253,7 @@ export const Subreddit: FC<{
           <Input
             placeholder="/r/selfhosted"
             name="search"
-            label="Search Subreddit"
+            label="Subreddit Zoeken"
             readOnly={loading}
             value={searchValue}
             error={errors?.message}

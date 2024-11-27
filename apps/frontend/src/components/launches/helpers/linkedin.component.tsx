@@ -103,7 +103,7 @@ export const LinkedinCompany: FC<{
       <div className="flex flex-col w-[500px] h-[250px] bg-sixth border-tableBorder border-2 rounded-xl pb-[20px] px-[20px] relative">
         <div className="flex">
           <div className="flex-1">
-            <TopTitle title={'Select Company'} />
+            <TopTitle title={'Selecteer Bedrijf'} />
           </div>
           <button
             className="outline-none absolute right-[20px] top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root bg-primary hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
@@ -134,7 +134,7 @@ export const LinkedinCompany: FC<{
             onChange={(e) => setCompany(e.target.value)}
             placeholder="https://www.linkedin.com/company/gitroom"
           />
-          <Button onClick={getCompany}>Add</Button>
+          <Button onClick={getCompany}>Toevoegen</Button>
         </div>
       </div>
     </div>

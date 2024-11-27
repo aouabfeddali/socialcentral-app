@@ -72,22 +72,22 @@ const DevtoSettings: FC = () => {
   const { date } = useIntegration();
   return (
     <>
-      <Input label="Title" {...form.register('title')} />
+      <Input label="Titel" {...form.register('title')} />
       <Canonical
         date={date}
         label="Canonical Link"
         {...form.register('canonical')}
       />
       <MediaComponent
-        label="Cover picture"
-        description="Add a cover picture"
+        label="Omslagfoto"
+        description="Omslagfoto toevoegen"
         {...form.register('main_image')}
       />
       <div className="mt-[20px]">
         <SelectOrganization {...form.register('organization')} />
       </div>
       <div>
-        <DevtoTags label="Tags (Maximum 4)" {...form.register('tags')} />
+        <DevtoTags label="Tags (Maximaal 4)" {...form.register('tags')} />
       </div>
     </>
   );

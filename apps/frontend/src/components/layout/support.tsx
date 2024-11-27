@@ -38,7 +38,7 @@ export const Support = () => {
           />
         </svg>
       </div>
-      <div>Discord Support</div>
+      <div>Discord Ondersteuning</div>
     </div>
   );
 };

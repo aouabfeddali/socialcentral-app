@@ -33,10 +33,10 @@ export const LifetimeDeal = () => {
 
     if (success) {
       mutate('/user/self');
-      toast.show('Successfully claimed the code');
+      toast.show('Code succesvol geclaimd');
       fireEvents('lifetime_claimed');
     } else {
-      toast.show('Code already claimed or invalid code', 'warning');
+      toast.show('Code al geclaimd of ongeldig', 'warning');
     }
 
     setCode('');
@@ -57,20 +57,20 @@ export const LifetimeDeal = () => {
     const currentPricing = user?.tier;
     const channelsOr = currentPricing.channel;
     const list = [];
-    list.push(`${user.totalChannels} ${user.totalChannels === 1 ? 'channel' : 'channels'}`);
+    list.push(`${user.totalChannels} ${user.totalChannels === 1 ? 'kanaal' : 'kanalen'}`);
     list.push(
       `${
         currentPricing.posts_per_month > 10000
-          ? 'Unlimited'
+          ? 'Onbeperkt'
           : currentPricing.posts_per_month
-      } posts per month`
+      } berichten per maand`
     );
     if (currentPricing.team_members) {
-      list.push(`Unlimited team members`);
+      list.push(`Onbeperkte teamleden`);
     }
 
     if (currentPricing?.ai) {
-      list.push(`AI auto-complete`);
+      list.push(`AI-autocomplete`);
     }
 
     return list;
@@ -83,20 +83,20 @@ export const LifetimeDeal = () => {
     const currentPricing = pricing[nextPackage];
     const channelsOr = currentPricing.channel;
     const list = [];
-    list.push(`${channelsOr} ${channelsOr === 1 ? 'channel' : 'channels'}`);
+    list.push(`${channelsOr} ${channelsOr === 1 ? 'kanaal' : 'kanalen'}`);
     list.push(
       `${
         currentPricing.posts_per_month > 10000
-          ? 'Unlimited'
+          ? 'Onbeperkt'
           : currentPricing.posts_per_month
-      } posts per month`
+      } berichten per maand`
     );
     if (currentPricing.team_members) {
-      list.push(`Unlimited team members`);
+      list.push(`Onbeperkte teamleden`);
     }
 
     if (currentPricing?.ai) {
-      list.push(`AI auto-complete`);
+      list.push(`AI-autocomplete`);
     }
 
     return list;
@@ -115,7 +115,7 @@ export const LifetimeDeal = () => {
     <div className="flex gap-[30px]">
       <div className="border border-customColor6 bg-sixth p-[24px] flex flex-col gap-[20px] flex-1 rounded-[4px]">
         <div className="text-[30px]">
-          Current Package: {user?.totalChannels > 8 ? 'EXTRA' : user?.tier?.current}
+        Huidig Pakket:: {user?.totalChannels > 8 ? 'EXTRA' : user?.tier?.current}
         </div>
 
         <div className="flex flex-col gap-[10px] justify-center text-[16px] text-customColor18">
@@ -143,8 +143,8 @@ export const LifetimeDeal = () => {
 
       <div className="border border-customColor6 bg-sixth p-[24px] flex flex-col gap-[20px] flex-1 rounded-[4px]">
         <div className="text-[30px]">
-          Next Package:{' '}
-          {user?.tier?.current === 'PRO' ? 'EXTRA' : !user?.tier?.current ? 'FREE' : user?.tier?.current === 'STANDARD' ? 'PRO' : 'STANDARD'}
+        Volgend Pakket::{' '}
+          {user?.tier?.current === 'PRO' ? 'EXTRA' : !user?.tier?.current ? 'FREE' : user?.tier?.current === 'STANDARD' ? 'PRO' : 'STANDAARD'}
         </div>
 
         <div className="flex flex-col gap-[10px] justify-center text-[16px] text-customColor18">
@@ -175,7 +175,7 @@ export const LifetimeDeal = () => {
             <div className="flex-1">
               <Input
                 label="Code"
-                placeholder="Enter your code"
+                placeholder="Voer je code in"
                 disableForm={true}
                 name="code"
                 value={code}
@@ -184,7 +184,7 @@ export const LifetimeDeal = () => {
             </div>
             <div>
               <Button disabled={code.length < 4} onClick={claim}>
-                Claim
+              Claim
               </Button>
             </div>
           </div>

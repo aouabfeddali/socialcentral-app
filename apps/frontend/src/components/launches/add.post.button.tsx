@@ -9,7 +9,7 @@ export const AddPostButton: FC<{ onClick: () => void; num: number }> = (
 
   useCopilotAction({
     name: 'addPost_' + num,
-    description: 'Add a post after the post number ' + (num + 1),
+    description: 'Voeg een bericht toe na berichtnummer ' + (num + 1),
     handler: () => {
       onClick();
     },
@@ -34,7 +34,7 @@ export const AddPostButton: FC<{ onClick: () => void; num: number }> = (
           />
         </svg>
       </div>
-      <div className="text-white">Add comment</div>
+      <div className="text-white">Reactie toevoegen</div>
     </Button>
   );
 };

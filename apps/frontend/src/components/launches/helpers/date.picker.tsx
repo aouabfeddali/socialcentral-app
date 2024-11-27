@@ -94,7 +94,7 @@ export const DatePicker: FC<{
             defaultValue={date.toDate()}
           />
           <Button className="mt-[12px]" onClick={changeShow}>
-            Close
+          Sluiten
           </Button>
         </div>
       )}

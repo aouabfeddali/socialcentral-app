@@ -29,7 +29,7 @@ export const BotPicture: FC<{
       });
 
       props.mutate();
-      toast.show('Updated', 'success');
+      toast.show('Bijgewerkt', 'success');
       modal.closeAll();
     },
     [nick, picture, props.mutate]
@@ -43,7 +43,7 @@ export const BotPicture: FC<{
 
   return (
     <div className="rounded-[4px] border border-customColor6 bg-sixth px-[16px] pb-[16px] relative w-full">
-      <TopTitle title={`Change Bot Picture`} />
+      <TopTitle title={`Botafbeelding Wijzigen`} />
       <button
         className="outline-none absolute right-[20px] top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
         type="button"
@@ -74,22 +74,22 @@ export const BotPicture: FC<{
                 alt="Bot Picture"
                 className="w-[100px] h-[100px] rounded-full"
               />
-              <Button type="button" onClick={openMedia}>Upload</Button>
+              <Button type="button" onClick={openMedia}>Uploaden</Button>
             </div>
           )}
           {props.canChangeNickName && (
             <Input
               value={nick}
               onChange={(e) => setNickname(e.target.value)}
-              name="Nickname"
-              label="Nickname"
+              name="Bijnaam"
+              label="Bijnaam"
               placeholder=""
               disableForm={true}
             />
           )}
 
           <div className="mt-[50px]">
-            <Button type="submit">Save</Button>
+            <Button type="submit">Opslaan</Button>
           </div>
         </form>
       </div>

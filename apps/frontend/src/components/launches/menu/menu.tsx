@@ -44,8 +44,8 @@ export const Menu: FC<{
   const disableChannel = useCallback(async () => {
     if (
       !(await deleteDialog(
-        'Are you sure you want to disable this channel?',
-        'Disable Channel'
+        'Weet je zeker dat je dit kanaal wilt uitschakelen?',
+        'Kanaal Uitschakelen'
       ))
     ) {
       return;
@@ -55,7 +55,7 @@ export const Menu: FC<{
       body: JSON.stringify({ id }),
     });
 
-    toast.show('Channel Disabled', 'success');
+    toast.show('Kanaal Uitgeschakeld', 'success');
     setShow(false);
     onChange(false);
   }, []);
@@ -63,8 +63,8 @@ export const Menu: FC<{
   const deleteChannel = useCallback(async () => {
     if (
       !(await deleteDialog(
-        'Are you sure you want to delete this channel?',
-        'Delete Channel'
+        'Weet je zeker dat je dit kanaal wilt verwijderen?',
+        'Kanaal Verwijderen'
       ))
     ) {
       return;
@@ -76,13 +76,13 @@ export const Menu: FC<{
 
     if (deleteIntegration.status === 406) {
       toast.show(
-        'You have to delete all the posts associated with this channel before deleting it',
+        'Je moet alle berichten die aan dit kanaal zijn gekoppeld verwijderen voordat je het kunt verwijderen',
         'warning'
       );
       return;
     }
 
-    toast.show('Channel Deleted', 'success');
+    toast.show('Kanaal Verwijderd', 'success');
     setShow(false);
     onChange(true);
   }, []);
@@ -93,7 +93,7 @@ export const Menu: FC<{
       body: JSON.stringify({ id }),
     });
 
-    toast.show('Channel Enabled', 'success');
+    toast.show('Kanaal Ingeschakeld', 'success');
     setShow(false);
     onChange(false);
   }, []);
@@ -182,7 +182,7 @@ export const Menu: FC<{
                 </svg>
               </div>
               <div className="text-[12px]">
-                Change Bot{' '}
+              Bot Wijzigen{' '}
                 {[
                   canChangeProfilePicture && 'Picture',
                   canChangeNickName && 'Nickname',
@@ -207,7 +207,7 @@ export const Menu: FC<{
                 />
               </svg>
             </div>
-            <div className="text-[12px]">Edit Time Slots</div>
+            <div className="text-[12px]">Tijdslots Bewerken</div>
           </div>
           {canEnable && (
             <div
@@ -228,7 +228,7 @@ export const Menu: FC<{
                   />
                 </svg>
               </div>
-              <div className="text-[12px]">Enable Channel</div>
+              <div className="text-[12px]">Kanaal Inschakelen</div>
             </div>
           )}
 
@@ -251,7 +251,7 @@ export const Menu: FC<{
                   />
                 </svg>
               </div>
-              <div className="text-[12px]">Disable Channel</div>
+              <div className="text-[12px]">Kanaal Uitschakelen</div>
             </div>
           )}
 
@@ -270,7 +270,7 @@ export const Menu: FC<{
                 />
               </svg>
             </div>
-            <div className="text-[12px]">Delete</div>
+            <div className="text-[12px]">Verwijderen</div>
           </div>
         </div>
       )}

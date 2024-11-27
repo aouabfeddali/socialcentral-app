@@ -145,9 +145,9 @@ export const LayoutSettings = ({ children }: { children: ReactNode }) => {
                     <>
                       <div className="text-center mb-[20px] text-xl">
                         <h1 className="text-3xl">
-                          Join 1000+ Entrepreneurs Who Use Postiz
+                        Sluit je aan bij 1000+ ondernemers die Smart Create gebruiken
                           <br />
-                          To Manage All Your Social Media Channels
+                          Om al je sociale mediakanalen te beheren
                         </h1>
                         <br />
                         <div className="table mx-auto">
@@ -166,7 +166,7 @@ export const LayoutSettings = ({ children }: { children: ReactNode }) => {
                                 />
                               </svg>
                             </div>
-                            <div>100% no-risk trial</div>
+                            <div>100% risicoloze proefperiode</div>
                           </div>
                           <div className="flex gap-[5px] items-center">
                             <div>
@@ -183,7 +183,7 @@ export const LayoutSettings = ({ children }: { children: ReactNode }) => {
                                 />
                               </svg>
                             </div>
-                            <div>Pay nothing for the first 7 days</div>
+                            <div>Betaal niets voor de eerste 7 dagen</div>
                           </div>
                           <div className="flex gap-[5px] items-center">
                             <div>
@@ -200,7 +200,7 @@ export const LayoutSettings = ({ children }: { children: ReactNode }) => {
                                 />
                               </svg>
                             </div>
-                            <div>Cancel anytime, hassle-free</div>
+                            <div>Annuleer op elk moment, zonder gedoe</div>
                           </div>
                         </div>
                       </div>

@@ -83,7 +83,7 @@ export const Prorate: FC<{
 
   return (
     <div className="text-[12px] flex pt-[12px]">
-      (Pay Today ${(price < 0 ? 0 : price)?.toFixed(1)})
+      (Betaal Vandaag ${(price < 0 ? 0 : price)?.toFixed(1)})
     </div>
   );
 };
@@ -96,33 +96,33 @@ export const Features: FC<{
     const currentPricing = pricing[pack];
     const channelsOr = currentPricing.channel;
     const list = [];
-    list.push(`${channelsOr} ${channelsOr === 1 ? 'channel' : 'channels'}`);
+    list.push(`${channelsOr} ${channelsOr === 1 ? 'kanaal' : 'kanalen'}`);
     list.push(
       `${
         currentPricing.posts_per_month > 10000
-          ? 'Unlimited'
+          ? 'Onbeperkt'
           : currentPricing.posts_per_month
-      } posts per month`
+      } berichten per maand`
     );
     if (currentPricing.team_members) {
-      list.push(`Unlimited team members`);
+      list.push(`Onbeperkte teamleden`);
     }
 
     if (currentPricing?.ai) {
-      list.push(`AI auto-complete`);
+      list.push(`AI-autocomplete`);
       list.push(`AI copilots`);
-      list.push(`AI Autocomplete`);
+      list.push(`AI-autocomplete`);
     }
 
-    list.push(`Advanced Picture Editor`);
+    list.push(`Geavanceerde Foto-editor`);
 
     if (currentPricing?.image_generator) {
       list.push(
-        `${currentPricing?.image_generation_count} AI Images per month`
+        `${currentPricing?.image_generation_count} AI-afbeeldingen per maand`
       );
     }
 
-    list.push(`Marketplace full access`);
+    list.push(`Volledige toegang tot marktplaats`);
 
     return list;
   }, [pack]);
@@ -165,7 +165,7 @@ const Info: FC<{ proceed: (feedback: string) => void }> = (props) => {
 
   return (
     <div className="relative flex gap-[20px] flex-col flex-1 rounded-[4px] border border-customColor6 bg-sixth p-[16px] pt-0 w-[500px]">
-      <TopTitle title="Oh no" />
+      <TopTitle title="Oh nee" />
       <button
         className="outline-none absolute right-[20px] top-[15px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
         type="button"
@@ -187,9 +187,9 @@ const Info: FC<{ proceed: (feedback: string) => void }> = (props) => {
       </button>
 
       <div>
-        We are sorry to see you go :(
+        Het spijt ons dat je weggaat:
         <br />
-        Would you mind shortly tell us what we could have done better?
+        Zou je ons kort kunnen vertellen wat we beter hadden kunnen doen?
       </div>
       <div>
         <Textarea
@@ -202,7 +202,7 @@ const Info: FC<{ proceed: (feedback: string) => void }> = (props) => {
       </div>
       <div>
         <Button disabled={feedback.length < 20} onClick={cancel}>
-          Cancel Subscription
+        Abonnement Annuleren
         </Button>
       </div>
     </div>
@@ -283,7 +283,7 @@ export const MainBillingComponent: FC<{
         pricing[subscription?.subscriptionTier!]?.team_members
       ) {
         messages.push(
-          `Your team members will be removed from your organization`
+          `Je teamleden worden verwijderd uit je organisatie`
         );
       }
 
@@ -291,11 +291,11 @@ export const MainBillingComponent: FC<{
         if (
           subscription?.cancelAt ||
           (await deleteDialog(
-            `Are you sure you want to cancel your subscription? ${messages.join(
+            `Weet je zeker dat je je abonnement wilt annuleren? ${messages.join(
               ', '
             )}`,
-            'Yes, cancel',
-            'Cancel Subscription'
+            'Ja, annuleren',
+            'Abonnement Annuleren'
           ))
         ) {
           const info = await new Promise((res) => {
@@ -325,8 +325,8 @@ export const MainBillingComponent: FC<{
 
           setSubscription((subs) => ({ ...subs!, cancelAt: cancel_at }));
           if (cancel_at)
-            toast.show('Subscription set to canceled successfully');
-          if (!cancel_at) toast.show('Subscription reactivated successfully');
+            toast.show('Abonnement succesvol geannuleerd');
+          if (!cancel_at) toast.show('Abonnement succesvol opnieuw geactiveerd');
 
           setLoading(false);
         }
@@ -335,7 +335,7 @@ export const MainBillingComponent: FC<{
 
       if (
         messages.length &&
-        !(await deleteDialog(messages.join(', '), 'Yes, continue'))
+        !(await deleteDialog(messages.join(', '), 'Ja, doorgaan'))
       ) {
         return;
       }
@@ -360,9 +360,9 @@ export const MainBillingComponent: FC<{
       if (portal) {
         if (
           await deleteDialog(
-            'We could not charge your credit card, please update your payment method',
-            'Update',
-            'Payment Method Required'
+            'We konden je creditcard niet belasten, werk je betaalmethode bij',
+            'Bijwerken',
+            'Betaalmethode Vereist'
           )
         ) {
           window.open(portal);
@@ -384,7 +384,7 @@ export const MainBillingComponent: FC<{
             revalidate: false,
           }
         );
-        toast.show('Subscription updated successfully');
+        toast.show('Abonnement succesvol bijgewerkt');
       }
 
       setLoading(false);
@@ -400,13 +400,13 @@ export const MainBillingComponent: FC<{
   return (
     <div className="flex flex-col gap-[16px]">
       <div className="flex flex-row">
-        <div className="flex-1 text-[20px]">Plans</div>
+        <div className="flex-1 text-[20px]">Plannen</div>
         <div className="flex items-center gap-[16px]">
-          <div>MONTHLY</div>
+          <div>MAANDELIJKS</div>
           <div>
             <Slider value={monthlyOrYearly} onChange={setMonthlyOrYearly} />
           </div>
-          <div>YEARLY</div>
+          <div>JAARLIJKS</div>
         </div>
       </div>
       <div className="flex gap-[16px]">
@@ -438,7 +438,7 @@ export const MainBillingComponent: FC<{
                         onClick={moveToCheckout('FREE')}
                         loading={loading}
                       >
-                        Reactivate subscription
+                       Abonnement opnieuw activeren
                       </Button>
                     </div>
                   </div>
@@ -460,18 +460,18 @@ export const MainBillingComponent: FC<{
                     )}
                   >
                     {currentPackage === name.toUpperCase()
-                      ? 'Current Plan'
+                      ? 'Huidig Abonnement'
                       : name.toUpperCase() === 'FREE'
                       ? subscription?.cancelAt
-                        ? `Downgrade on ${dayjs
+                        ? `Downgrade op ${dayjs
                             .utc(subscription?.cancelAt)
                             .local()
                             .format('D MMM, YYYY')}`
-                        : 'Cancel subscription'
+                        : 'Abonnement annuleren'
                       : // @ts-ignore
                       user?.tier === 'FREE' || user?.tier?.current === 'FREE'
-                      ? 'Start 7 days free trial'
-                      : 'Purchase'}
+                      ? 'Begin met 7 dagen gratis proefperiode'
+                      : 'Aanschaffen'}
                   </Button>
                 )}
                 {subscription &&
@@ -492,24 +492,24 @@ export const MainBillingComponent: FC<{
       </div>
       {!!subscription?.id && (
         <div className="flex justify-center mt-[20px] gap-[10px]">
-          <Button onClick={updatePayment}>Update Payment Method</Button>
+          <Button onClick={updatePayment}>Betaalmethode Bijwerken</Button>
           {isGeneral && !subscription?.cancelAt && (
             <Button
               className="bg-red-500"
               loading={loading}
               onClick={moveToCheckout('FREE')}
             >
-              Cancel subscription
+             Abonnement annuleren
             </Button>
           )}
         </div>
       )}
       {subscription?.cancelAt && isGeneral && (
         <div className="text-center">
-          Your subscription will be cancel at{' '}
+          Je abonnement wordt geannuleerd op{' '}
           {dayjs(subscription.cancelAt).local().format('D MMM, YYYY')}
           <br />
-          You will never be charged again
+          Je zult nooit meer worden belast
         </div>
       )}
       <FAQComponent />

@@ -128,8 +128,8 @@ const Pagination: FC<{ results: number }> = (props) => {
   return (
     <div className="flex items-center relative">
       <div className="absolute left-0">
-        Showing {from + 1} to {to > results ? results : to} from {results}{' '}
-        Results
+      Weergeven {from + 1} tot {to > results ? results : to} van {results}{' '}
+      Resultaten
       </div>
       <div className="flex mx-auto">
         {page > 0 && (
@@ -335,9 +335,9 @@ export const RequestService: FC<{ toId: string; name: string }> = (props) => {
             </svg>
           </button>
           <div className="text-[18px] font-[500] flex flex-col">
-            <TopTitle title={`Send a message to ${name}`} />
+            <TopTitle title={`Stuur een bericht naar ${name}`} />
             <Textarea
-              placeholder="Add a message like: I'm intrested in 3 posts for Linkedin... (min 50 chars)"
+              placeholder="Voeg een bericht toe zoals: Ik ben geïnteresseerd in 3 berichten voor LinkedIn... (minimaal 50 tekens)"
               className="mt-[14px] resize-none h-[400px]"
               name="message"
               label=""
@@ -348,7 +348,7 @@ export const RequestService: FC<{ toId: string; name: string }> = (props) => {
                 type="submit"
                 className="w-[144px] mb-[16px] rounded-[4px] text-[14px]"
               >
-                Send Message
+                Bericht Versturen
               </Button>
             </div>
           </div>
@@ -425,7 +425,7 @@ export const Card: FC<{
         </div>
         <div className="flex flex-col gap-[8px]">
           <div className="flex gap-[14px] items-center">
-            <div className="text-[24px]">{data.name || 'Noname'}</div>
+            <div className="text-[24px]">{data.name || 'Geen naam'}</div>
             <div className="flex gap-[3px]">
               {data.items.some((i) => i.key === 'content-writer') && (
                 <div
@@ -434,7 +434,7 @@ export const Card: FC<{
                     interClass
                   )}
                 >
-                  Content Writer
+                  Inhoudschrijver
                 </div>
               )}
               {data.items.some((i) => i.key === 'influencers') && (
@@ -444,7 +444,7 @@ export const Card: FC<{
                     interClass
                   )}
                 >
-                  Influencer
+                  Invloedrijke persoon
                 </div>
               )}
             </div>
@@ -459,7 +459,7 @@ export const Card: FC<{
             </div>
           </div>
           <div className="text-[18px] text-customColor18 font-[400]">
-            {data.bio || 'No bio'}
+            {data.bio || 'Geen bio'}
           </div>
           <div
             className={clsx(
@@ -481,7 +481,7 @@ export const Card: FC<{
         </div>
       </div>
       <div className="ml-[100px] items-center flex">
-        <Button onClick={requestService}>Request Service</Button>
+        <Button onClick={requestService}>Dien een verzoek in</Button>
       </div>
     </div>
   );
@@ -524,9 +524,9 @@ export const Buyer = () => {
         <img src="/peoplemarketplace.svg" />
       </div>
       <div className="text-[48px]">
-        The marketplace is not opened yet
+      De marktplaats is nog niet geopend
         <br />
-        Check again soon!
+        Kom later terug!
       </div>
     </div>
   );
@@ -554,7 +554,7 @@ export const Buyer = () => {
         </div>
         <div className="flex-1 gap-[16px] flex-col flex">
           <div className="text-[20px] text-right">
-            {list?.count || 0} Result
+            {list?.count || 0} Resultaat
           </div>
           {list?.list?.map((item, index) => (
             <Card key={String(index)} data={item} />

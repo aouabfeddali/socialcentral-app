@@ -56,7 +56,7 @@ const ActionControls = ({ store }: any) => {
           close.close();
         }}
       >
-        Use this media
+        Gebruik deze media
       </Button>
     </div>
   );
@@ -94,7 +94,7 @@ const Polonto: FC<{
       <div className="w-full h-full bg-sixth border-tableBorder border-2 rounded-xl pb-[20px] px-[20px] relative">
         <div className="flex">
           <div className="flex-1">
-            <TopTitle title="Design Media" />
+            <TopTitle title="Media Ontwerpen" />
           </div>
           <button
             onClick={closeModal}

@@ -34,7 +34,7 @@ export const StarsAndForks: FC<StarsAndForksInterface> = (props) => {
                     index === 0 ? char.toUpperCase() : char
                   )
                   .join('')}{' '}
-                Stars
+                Sterren
               </div>
             </div>
             <div className="flex-1 relative">
@@ -43,7 +43,7 @@ export const StarsAndForks: FC<StarsAndForksInterface> = (props) => {
                   <Chart list={item.stars} />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-3xl">
-                    Processing stars...
+                    Sterren verwerken...
                   </div>
                 )}
               </div>
@@ -86,7 +86,7 @@ export const StarsAndForks: FC<StarsAndForksInterface> = (props) => {
                   <Chart list={item.forks} />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-3xl">
-                    Processing stars...
+                    Forks verwerken...
                   </div>
                 )}
               </div>

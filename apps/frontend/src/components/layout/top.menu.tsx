@@ -20,7 +20,7 @@ export const useMenuItems = () => {
       ]
       : []),
     {
-      name: isGeneral ? 'Calendar' : 'Launches',
+      name: isGeneral ? 'Kalender' : 'Lanceringen',
       icon: 'launches',
       path: '/launches',
     },
@@ -36,7 +36,7 @@ export const useMenuItems = () => {
     ...(!isGeneral
       ? [
         {
-          name: 'Settings',
+          name: 'Instellingen',
           icon: 'settings',
           path: '/settings',
           role: ['ADMIN', 'SUPERADMIN'],
@@ -44,17 +44,17 @@ export const useMenuItems = () => {
       ]
       : []),
     {
-      name: 'Marketplace',
+      name: 'Marktplaats',
       icon: 'marketplace',
       path: '/marketplace',
     },
     {
-      name: 'Messages',
+      name: 'Berichten',
       icon: 'messages',
       path: '/messages',
     },
     {
-      name: 'Billing',
+      name: 'Facturering',
       icon: 'billing',
       path: '/billing',
       role: ['ADMIN', 'SUPERADMIN'],

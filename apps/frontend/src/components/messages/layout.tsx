@@ -35,14 +35,14 @@ const Card: FC<{ message: Root2 }> = (props) => {
         {showFrom?.picture?.path && (
           <img
             src={showFrom.picture.path}
-            alt={showFrom.name || 'Noname'}
+            alt={showFrom.name || 'Geen naam'}
             className="w-full h-full rounded-full"
           />
         )}
       </div>
       <div className="flex-1 relative">
         <div className="absolute left-0 top-0 w-full h-full flex flex-col whitespace-nowrap">
-          <div>{showFrom?.name || 'Noname'}</div>
+          <div>{showFrom?.name || 'Geen naam'}</div>
           <div className="text-[12px] w-full overflow-ellipsis overflow-hidden">
             {message.messages[0]?.content}
           </div>
@@ -81,8 +81,8 @@ export const Layout: FC<{ renderChildren: ReactNode }> = (props) => {
     return (
       <div className="flex flex-col justify-center items-center mt-[100px] gap-[27px] text-center">
         <div><img src="/peoplemarketplace.svg" /></div>
-        <div className="text-[48px]">There are no messages yet.<br />Checkout the Marketplace</div>
-        <div><Button onClick={marketplace}>Go to marketplace</Button></div>
+        <div className="text-[48px]">Er zijn nog geen berichten.<br />Bekijk de Marktplaats</div>
+        <div><Button onClick={marketplace}>Ga naar marktplaats</Button></div>
       </div>
     );
   }
@@ -90,7 +90,7 @@ export const Layout: FC<{ renderChildren: ReactNode }> = (props) => {
   return (
     <div className="flex gap-[20px]">
       <div className="pt-[7px] w-[330px] flex flex-col">
-        <div className="text-[20px] mb-[18px]">All Messages</div>
+        <div className="text-[20px] mb-[18px]">Alle Berichten</div>
         <div className="flex flex-col">
           {messagesGroup.data?.map((message) => (
             <Card key={message.id} message={message} />

@@ -32,10 +32,10 @@ export const OrderCompleted: FC = () => {
   return (
     <div className="border border-customColor44 flex flex-col rounded-[6px] overflow-hidden">
       <div className="flex items-center bg-customColor8 px-[24px] py-[16px] text-[20px]">
-        <div className="flex-1">Order completed</div>
+        <div className="flex-1">Bestelling voltooid</div>
       </div>
       <div className="py-[16px] px-[24px] flex flex-col gap-[20px] text-[18px]">
-        The order has been completed
+      De bestelling is afgerond
       </div>
     </div>
   );
@@ -52,7 +52,7 @@ export const Published: FC<{
     <div className="border border-customColor44 flex flex-col rounded-[6px] overflow-hidden">
       <div className="flex items-center bg-customColor8 px-[24px] py-[16px] text-[20px]">
         <div className="flex-1">
-          {isSellerOrBuyer === 'BUYER' ? 'Your' : 'The'} post has been published
+          {isSellerOrBuyer === 'BUYER' ? 'Je' : 'De'} bericht is gepubliceerd
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export const Published: FC<{
           <div className="flex-1 text-[18px]">{data.data.name}</div>
         </div>
         <div className="text-[14px]">
-          URL:{' '}
+        URL:{' '}
           <a className="underline hover:font-bold" href={data.data.url}>
             {data.data.url}
           </a>
@@ -152,7 +152,7 @@ export const Offer: FC<{
   return (
     <div className="border border-customColor44 flex flex-col rounded-[6px] overflow-hidden">
       <div className="flex items-center bg-customColor8 px-[24px] py-[16px] text-[20px]">
-        <div className="flex-1">New Offer</div>
+        <div className="flex-1">Nieuwe Aanbieding</div>
         <div className="text-customColor42">${totalPrice}</div>
       </div>
       <div className="py-[16px] px-[24px] flex flex-col gap-[20px]">
@@ -175,7 +175,7 @@ export const Offer: FC<{
               />
             </div>
             <div className="flex-1 text-[18px]">{item.integration.name}</div>
-            <div className="text-[18px]">{item.quantity} Posts</div>
+            <div className="text-[18px]">{item.quantity} Berichten</div>
           </div>
         ))}
         {orderStatus === 'PENDING' &&
@@ -186,14 +186,14 @@ export const Offer: FC<{
                 className="rounded-[4px] text-[14px]"
                 onClick={acceptOrder}
               >
-                Pay & Accept Offer
+                Betaal & Accepteer Aanbieding
               </Button>
             </div>
           )}
         {orderStatus === 'ACCEPTED' && (
           <div className="flex justify-end">
             <Button className="rounded-[4px] text-[14px] border border-tableBorder !bg-sixth text-tableBorder">
-              Accepted
+            Geaccepteerd
             </Button>
           </div>
         )}
@@ -227,8 +227,8 @@ export const Post: FC<{
   const requestRevision = useCallback(async () => {
     if (
       !(await deleteDialog(
-        'Are you sure you want to request a revision?',
-        'Yes'
+        'Weet je zeker dat je een revisie wilt aanvragen?',
+        'Ja'
       ))
     ) {
       return;
@@ -248,8 +248,8 @@ export const Post: FC<{
   const requestApproved = useCallback(async () => {
     if (
       !(await deleteDialog(
-        'Are you sure you want to approve this post?',
-        'Yes'
+        'Weet je zeker dat je dit bericht wilt goedkeuren?',
+        'Ja'
       ))
     ) {
       return;
@@ -308,7 +308,7 @@ export const Post: FC<{
     <div className="border border-customColor44 flex flex-col rounded-[6px] overflow-hidden">
       <div className="flex items-center bg-customColor8 px-[24px] py-[16px] text-[20px]">
         <div className="flex-1">
-          Post Draft {capitalize(integrationData?.providerIdentifier || '')}
+        Bericht Concept {capitalize(integrationData?.providerIdentifier || '')}
         </div>
       </div>
       <div className="py-[16px] px-[24px] flex gap-[20px]">
@@ -338,16 +338,16 @@ export const Post: FC<{
                   onClick={requestRevision}
                   className="rounded-[4px] text-[14px] border-[2px] border-customColor21 !bg-sixth"
                 >
-                  Revision Needed
+                  Revisie Nodig
                 </Button>
                 <Button
                   onClick={requestApproved}
                   className="rounded-[4px] text-[14px] border-[2px] border-customColor21 !bg-sixth"
                 >
-                  Approve
+                  Goedkeuren
                 </Button>
                 <Button className="rounded-[4px]" onClick={preview}>
-                  Preview
+                Voorbeeld
                 </Button>
               </div>
             )}
@@ -355,14 +355,14 @@ export const Post: FC<{
           {data.data.status === 'REVISION' && (
             <div className="flex justify-end">
               <Button className="rounded-[4px] text-[14px] border border-tableBorder !bg-sixth text-tableBorder">
-                Revision Requested
+              Revisie Aangevraagd
               </Button>
             </div>
           )}
           {data.data.status === 'APPROVED' && (
             <div className="flex justify-end gap-[10px]">
               <Button className="rounded-[4px] text-[14px] border border-tableBorder !bg-sixth text-tableBorder">
-                ACCEPTED
+              GEACCEPTEERD
               </Button>
             </div>
           )}
@@ -370,7 +370,7 @@ export const Post: FC<{
           {data.data.status === 'CANCELED' && (
             <div className="flex justify-end gap-[10px]">
               <Button className="rounded-[4px] text-[14px] border border-tableBorder !bg-sixth text-tableBorder">
-                Cancelled by the seller
+              Geannuleerd door de verkoper
               </Button>
             </div>
           )}

@@ -28,7 +28,7 @@ export const GithubProvider = () => {
           />
         </svg>
       </div>
-      <div>Sign in with GitHub</div>
+      <div>Inloggen met GitHub</div>
     </div>
   );
 };

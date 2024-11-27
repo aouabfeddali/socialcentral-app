@@ -58,7 +58,7 @@ export function Login() {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div>
           <h1 className="text-3xl font-bold text-left mb-4 cursor-pointer">
-            Sign In
+          Inloggen
           </h1>
         </div>
 
@@ -68,41 +68,41 @@ export function Login() {
           <div
             className={`absolute z-[1] ${interClass} justify-center items-center w-full left-0 top-0 flex`}
           >
-            <div className="bg-customColor15 px-[16px]">OR</div>
+            <div className="bg-customColor15 px-[16px]">OF</div>
           </div>
         </div>
 
         <div className="text-textColor">
           <Input
-            label="Email"
+            label="E-mail"
             {...form.register('email')}
             type="email"
-            placeholder="Email Address"
+            placeholder="E-mailadres"
           />
           <Input
-            label="Password"
+            label="Wachtwoord"
             {...form.register('password')}
             autoComplete="off"
             type="password"
-            placeholder="Password"
+            placeholder="Wachtwoord"
           />
         </div>
         <div className="text-center mt-6">
           <div className="w-full flex">
             <Button type="submit" className="flex-1 rounded-[4px]" loading={loading}>
-              Sign in
+            Inloggen
             </Button>
           </div>
           <p className="mt-4 text-sm">
-            Don{"'"}t Have An Account?{' '}
+          Heb je geen account?
             <Link href="/auth" className="underline cursor-pointer">
               {' '}
-              Sign Up
+              Registreren
             </Link>
           </p>
           <p className="mt-4 text-sm text-red-600">
             <Link href="/auth/forgot" className="underline cursor-pointer">
-              Forgot password
+            Wachtwoord vergeten
             </Link>
           </p>
         </div>

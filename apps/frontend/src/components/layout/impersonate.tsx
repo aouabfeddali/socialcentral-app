@@ -14,8 +14,8 @@ export const Subscription = () => {
       const value = e.target.value;
       if (
         await deleteDialog(
-          'Are you sure you want to add a user subscription?',
-          'Add'
+          'Weet je zeker dat je een gebruikersabonnement wilt toevoegen?',
+          'Toevoegen'
         )
       ) {
         await fetch('/billing/add-subscription', {
@@ -39,7 +39,7 @@ export const Subscription = () => {
       value=""
       className="text-black"
     >
-      <option>-- ADD FREE SUBSCRIPTION --</option>
+      <option>-- GRATIS ABONNEMENT TOEVOEGEN --</option>
       {Object.keys(pricing)
         .filter((f) => !f.includes('FREE'))
         .map((key) => (
@@ -113,7 +113,7 @@ export const Impersonate = () => {
           <div className="relative z-[999]">
             {user?.impersonate ? (
               <div className="text-center flex justify-center items-center gap-[20px]">
-                <div>Currently Impersonating</div>
+                <div>Momenteel Impersoneren</div>
                 <div>
                   <div
                     className="px-[10px] rounded-[4px] bg-red-500 text-textColor cursor-pointer"
@@ -127,7 +127,7 @@ export const Impersonate = () => {
             ) : (
               <Input
                 autoComplete="off"
-                placeholder="Write the user details"
+                placeholder="Vul de gebruikersgegevens in"
                 name="impersonate"
                 disableForm={true}
                 label=""
@@ -150,7 +150,7 @@ export const Impersonate = () => {
                     key={user.id}
                     className="p-[10px] border-b border-customColor6 hover:bg-tableBorder cursor-pointer"
                   >
-                    user: {user.id.split('-').at(-1)} - {user.name} -{' '}
+                    gebruiker: {user.id.split('-').at(-1)} - {user.name} -{' '}
                     {user.email}
                   </div>
                 ))}

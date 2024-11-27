@@ -68,12 +68,12 @@ export function Register() {
 function getHelpfulReasonForRegistrationFailure(httpCode: number) {
   switch (httpCode) {
     case 400:
-      return 'Email already exists';
+      return 'E-mail bestaat al';
     case 404:
-      return 'Your browser got a 404 when trying to contact the API, the most likely reasons for this are the NEXT_PUBLIC_BACKEND_URL is set incorrectly, or the backend is not running.';
+      return 'Je browser kreeg een 404 bij het proberen contact op te nemen met de API. Mogelijke oorzaken zijn een onjuiste instelling van NEXT_PUBLIC_BACKEND_URL of dat de backend niet draait.';
   }
 
-  return 'Unhandled error: ' + httpCode;
+  return 'Onverwerkte fout: ' + httpCode;
 }
 
 export function RegisterAfter({
@@ -130,7 +130,7 @@ export function RegisterAfter({
       }
     }).catch(e => {
       form.setError("email", {
-        message: 'General error: ' + e.toString() + '. Please check your browser console.',
+        message: 'Algemene fout: ' + e.toString() + '. Controleer je browserconsole.',
       });
     })
   };
@@ -140,7 +140,7 @@ export function RegisterAfter({
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div>
           <h1 className="text-3xl font-bold text-left mb-4 cursor-pointer">
-            Sign Up
+          Registreer
           </h1>
         </div>
         {!isAfterProvider && (!isGeneral ? <GithubProvider /> : <GoogleProvider />)}
@@ -150,7 +150,7 @@ export function RegisterAfter({
             <div
               className={`absolute z-[1] ${interClass} justify-center items-center w-full left-0 top-0 flex`}
             >
-              <div className="bg-customColor15 px-[16px]">OR</div>
+              <div className="bg-customColor15 px-[16px]">OF</div>
             </div>
           </div>
         )}
@@ -158,55 +158,55 @@ export function RegisterAfter({
           {!isAfterProvider && (
             <>
               <Input
-                label="Email"
+                label="E-mail"
                 {...form.register('email')}
                 type="email"
-                placeholder="Email Address"
+                placeholder="E-mailadres"
               />
               <Input
-                label="Password"
+                label="Wachtwoord"
                 {...form.register('password')}
                 autoComplete="off"
                 type="password"
-                placeholder="Password"
+                placeholder="Wachtwoord"
               />
             </>
           )}
           <Input
-            label="Company"
+            label="Bedrijf"
             {...form.register('company')}
             autoComplete="off"
             type="text"
-            placeholder="Company"
+            placeholder="Bedrijf"
           />
         </div>
         <div className={clsx('text-[12px]', interClass)}>
-          By registering you agree to our{' '}
+        Door je te registreren ga je akkoord met onze{' '}
           <a
             href={`https://postiz.com/terms`}
             className="underline hover:font-bold"
           >
-            Terms of Service
+            Algemene Voorwaarden
           </a>{' '}
-          and{' '}
+          en{' '}
           <a
             href={`https://postiz.com/privacy`}
             className="underline hover:font-bold"
           >
-            Privacy Policy
+            Privacybeleid
           </a>
         </div>
         <div className="text-center mt-6">
           <div className="w-full flex">
             <Button type="submit" className="flex-1 rounded-[4px]" loading={loading}>
-              Create Account
+            Account aanmaken
             </Button>
           </div>
           <p className="mt-4 text-sm">
-            Already Have An Account?{' '}
+          Heb je al een account?{' '}
             <Link href="/auth/login" className="underline  cursor-pointer">
               {' '}
-              Sign In
+              Inloggen
             </Link>
           </p>
         </div>

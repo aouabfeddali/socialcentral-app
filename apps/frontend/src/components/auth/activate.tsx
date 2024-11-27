@@ -5,11 +5,11 @@ export function Activate() {
     <>
       <div>
         <h1 className="text-3xl font-bold text-left mb-4 cursor-pointer">
-          Activate your account
+        Activeer je account
         </h1>
       </div>
       <div className="text-textColor">
-        Thank you for registering!<br />Please check your email to activate your account.
+      Bedankt voor je registratie!<br />Controleer je e-mail om je account te activeren.
       </div>
     </>
   );

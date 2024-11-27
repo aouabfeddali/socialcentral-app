@@ -16,8 +16,8 @@ export const newImage: ICommand = {
   prefix: '![image](',
   suffix: ')',
   buttonProps: {
-    'aria-label': 'Add image (ctrl + k)',
-    title: 'Add image (ctrl + k)',
+    'aria-label': 'Afbeelding toevoegen (ctrl + k)',
+    title: 'Afbeelding toevoegen (ctrl + k)',
   },
   icon: (
     <svg width="13" height="13" viewBox="0 0 20 20">

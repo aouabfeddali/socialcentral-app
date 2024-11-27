@@ -9,7 +9,7 @@ export const LogoutComponent = () => {
   const fetch = useFetch();
   const {isGeneral} = useVariables();
   const logout = useCallback(async () => {
-    if (await deleteDialog('Are you sure you want to logout?', 'Yes logout')) {
+    if (await deleteDialog('Weet je zeker dat je wilt uitloggen?', 'Ja, uitloggen')) {
       await fetch('/user/logout', {
         method: 'POST',
       });

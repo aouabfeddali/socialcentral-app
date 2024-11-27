@@ -18,7 +18,7 @@ const ConnectedComponent: FC<{
   const disconnect = useCallback(async () => {
     if (
       !(await deleteDialog(
-        'Are you sure you want to disconnect this repository?'
+        'Weet je zeker dat je deze repository wilt ontkoppelen?'
       ))
     ) {
       return;
@@ -35,9 +35,9 @@ const ConnectedComponent: FC<{
           <Image src="/icons/github.svg" alt="GitHub" width={40} height={40} />
         </div>
         <div className="flex-1">
-          <strong>Connected:</strong> {login}
+          <strong>Verbonden:</strong> {login}
         </div>
-        <Button onClick={disconnect}>Disconnect</Button>
+        <Button onClick={disconnect}>Ontkoppelen</Button>
       </div>
     </div>
   );
@@ -76,7 +76,7 @@ const ConnectComponent: FC<{
     });
 
     if (response.status === 404) {
-      toast.show('Repository not found', 'warning');
+      toast.show('Verbind je repository', 'warning');
       return ;
     }
 
@@ -90,12 +90,12 @@ const ConnectComponent: FC<{
         <div>
           <Image src="/icons/github.svg" alt="GitHub" width={40} height={40} />
         </div>
-        <div className="flex-1">Connect your repository</div>
+        <div className="flex-1">Verbind je repository</div>
         <Button
           className="bg-transparent border-0 text-gray mt-[7px]"
           onClick={cancelConnection}
         >
-          Cancel
+          Annuleren
         </Button>
         <Input
           value={url}
@@ -115,7 +115,7 @@ const ConnectComponent: FC<{
           }
           onClick={completeConnection}
         >
-          Connect
+          Verbinden
         </Button>
       </div>
     </div>
@@ -193,8 +193,8 @@ export const GithubComponent: FC<{
                 height={40}
               />
             </div>
-            <div className="flex-1">Connect your repository</div>
-            <Button onClick={connect}>Connect</Button>
+            <div className="flex-1">Verbind je repository</div>
+            <Button onClick={connect}>Verbinden</Button>
           </div>
         </div>
       )}

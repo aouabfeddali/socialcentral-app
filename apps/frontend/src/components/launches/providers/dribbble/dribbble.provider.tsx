@@ -9,7 +9,7 @@ const DribbbleSettings: FC = () => {
   const { register, control } = useSettings();
   return (
     <div className="flex flex-col">
-      <Input label={'Title'} {...register('title')} />
+      <Input label={'Titel'} {...register('title')} />
       <DribbbleTeams {...register('team')} />
     </div>
   );
@@ -23,11 +23,11 @@ export default withProvider(
     const isMp4 = firstItem?.find((item) => item.path.indexOf('mp4') > -1);
 
     if (firstItem.length !== 1) {
-      return 'Dribbble requires one item';
+      return 'Dribbble vereist één item';
     }
 
     if (isMp4) {
-      return 'Dribbble does not support mp4 files';
+      return 'Dribbble ondersteunt geen mp4-bestanden';
     }
 
     const details = await new Promise<{ width: number; height: number }>(
@@ -48,6 +48,6 @@ export default withProvider(
       return true;
     }
 
-    return 'Invalid image size. Dribbble requires 400x300 or 800x600 px images.';
+    return 'Ongeldige afbeeldingsgrootte. Dribbble vereist afbeeldingen van 400x300 of 800x600 pixels.';
   }
 );

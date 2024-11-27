@@ -128,15 +128,14 @@ export const ConnectChannels: FC = () => {
       )}
       <div className="flex flex-col">
         <div className="flex gap-[4px] flex-col">
-          <div className="text-[20px]">Connect Channels</div>
+          <div className="text-[20px]">Kanalen Verbinden</div>
           <div className="text-[14px] text-customColor18">
-            Connect your social media and publishing websites channels to
-            schedule posts later
+          Verbind je sociale media en publicatiewebsites om berichten later in te plannen
           </div>
         </div>
         <div className="flex border border-customColor47 rounded-[4px] mt-[16px]">
           <div className="flex-1 flex flex-col p-[16px] gap-[10px]">
-            <div className="text-[18px]">Social</div>
+            <div className="text-[18px]">Sociaal</div>
             <div className="grid grid-cols-3 gap-[16px]">
               {data?.social.map((social: any) => (
                 <div
@@ -162,7 +161,7 @@ export const ConnectChannels: FC = () => {
           </div>
           {!isGeneral && (
             <div className="flex-1 flex flex-col p-[16px] gap-[10px]">
-              <div className="text-[18px]">Publishing Platforms</div>
+              <div className="text-[18px]">Publicatieplatforms</div>
               <div className="grid grid-cols-3 gap-[16px]">
                 {data?.article.map((article: any) => (
                   <div
@@ -188,7 +187,7 @@ export const ConnectChannels: FC = () => {
         <div className="my-[24px] border border-customColor47 rounded-[4px] p-[16px]">
           <div className="gap-[16px] flex flex-col">
             {sortedIntegrations.length === 0 && (
-              <div className="text-[12px]">No channels</div>
+              <div className="text-[12px]">Geen kanalen</div>
             )}
             {sortedIntegrations.map((integration) => (
               <div key={integration.id} className="flex gap-[8px] items-center">
@@ -230,7 +229,7 @@ export const ConnectChannels: FC = () => {
                     ? {
                         'data-tooltip-id': 'tooltip',
                         'data-tooltip-content':
-                          'This channel is disabled, please upgrade your plan to enable it.',
+                          'Dit kanaal is uitgeschakeld, upgrade je abonnement om het in te schakelen.',
                       }
                     : {})}
                   className={clsx(

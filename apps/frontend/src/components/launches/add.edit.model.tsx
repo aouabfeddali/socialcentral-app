@@ -201,8 +201,8 @@ export const AddEditModal: FC<{
     (index: number) => async () => {
       if (
         !(await deleteDialog(
-          'Are you sure you want to delete this post?',
-          'Yes, delete it!'
+          'Weet je zeker dat je dit bericht wilt verwijderen?',
+          'Ja, verwijder het!'
         ))
       ) {
         return;
@@ -219,8 +219,8 @@ export const AddEditModal: FC<{
   const askClose = useCallback(async () => {
     if (
       await deleteDialog(
-        'Are you sure you want to close this modal? (all data will be lost)',
-        'Yes, close it!'
+        'Weet je zeker dat je dit venster wilt sluiten? (alle gegevens gaan verloren)',
+        'Ja, sluit het!'
       )
     ) {
       modal.closeAll();
@@ -246,8 +246,8 @@ export const AddEditModal: FC<{
       if (type === 'delete') {
         if (
           !(await deleteDialog(
-            'Are you sure you want to delete this post?',
-            'Yes, delete it!'
+            'Weet je zeker dat je dit bericht wilt verwijderen?',
+            'Ja, verwijder het!'
           ))
         ) {
           return;
@@ -293,8 +293,8 @@ export const AddEditModal: FC<{
         ) {
           if (
             !(await deleteDialog(
-              `${key?.integration?.name} post is too long, it will be cropped, do you want to continue?`,
-              'Yes, continue'
+              `${key?.integration?.name} Bericht is te lang, het wordt ingekort. Wil je doorgaan?`,
+              'Ja, ga door'
             ))
           ) {
             await key.trigger();
@@ -339,8 +339,8 @@ export const AddEditModal: FC<{
       mutate();
       toaster.show(
         !existingData.integration
-          ? 'Added successfully'
-          : 'Updated successfully'
+          ? 'Succesvol toegevoegd'
+          : 'Succesvol bijgewerkt'
       );
       modal.closeAll();
     },
@@ -390,10 +390,10 @@ export const AddEditModal: FC<{
           hitEscapeToClose={false}
           clickOutsideToClose={true}
           labels={{
-            title: 'AI Content Assistant',
+            title: 'AI Inhoudsassistent',
           }}
           className="!z-[499]"
-          instructions="You are an assistant that help the user to schedule their social media posts, everytime somebody write something, try to use a function call, if not prompt the user that the request is invalid and you are here to assists with social media posts"
+          instructions="Je bent een assistent die gebruikers helpt bij het inplannen van hun sociale mediaberichten. Elke keer dat iemand iets schrijft, probeer een functieaanroep te gebruiken. Als dit niet lukt, geef dan aan dat het verzoek ongeldig is en dat je hier bent om te helpen met sociale mediaberichten."
         />
       )}
       <div
@@ -409,7 +409,7 @@ export const AddEditModal: FC<{
           )}
         >
           <div className="relative flex gap-[20px] flex-col flex-1 rounded-[4px] border border-customColor6 bg-sixth p-[16px] pt-0">
-            <TopTitle title={existingData?.group ? 'Edit Post' : 'Create Post'}>
+            <TopTitle title={existingData?.group ? 'Bericht Bewerken' : 'Bericht Aanmaken'}>
               <div className="flex items-center">
                 <PostToOrganization
                   selected={existingData?.posts?.[0]?.submittedForOrderId!}
@@ -464,7 +464,8 @@ export const AddEditModal: FC<{
             />
             {!existingData.integration && !showHide.hideTopEditor ? (
               <>
-                <div>You are in global editing mode</div>
+                <div>U bevindt zich in de globale bewerkingsmodus
+                </div>
                 {value.map((p, index) => (
                   <Fragment key={`edit_${index}`}>
                     <div>
@@ -491,13 +492,13 @@ export const AddEditModal: FC<{
                           {showError &&
                             (!p.content || p.content.length < 6) && (
                               <div className="my-[5px] text-customColor19 text-[12px] font-[500]">
-                                The post should be at least 6 characters long
+                                Het bericht moet minstens 6 tekens lang zijn
                               </div>
                             )}
                           <div className="flex">
                             <div className="flex-1">
                               <MultiMediaComponent
-                                label="Attachments"
+                                label="Bijlagen"
                                 description=""
                                 value={p.image}
                                 name="image"
@@ -525,7 +526,7 @@ export const AddEditModal: FC<{
                                     </svg>
                                   </div>
                                   <div className="text-[12px] font-[500] pr-[10px]">
-                                    Delete Post
+                                  Bericht Verwijderen
                                   </div>
                                 </div>
                               )}
@@ -558,7 +559,7 @@ export const AddEditModal: FC<{
                 className="flex flex-row flex-wrap w-full h-full gap-[10px] justify-end items-center"
               >
                 <Button className="rounded-[4px]" onClick={askClose}>
-                  Cancel
+                Annuleren
                 </Button>
                 <Submitted
                   updateOrder={updateOrder}
@@ -571,7 +572,7 @@ export const AddEditModal: FC<{
                       className="rounded-[4px] border-2 border-red-400 text-red-400"
                       secondary={true}
                     >
-                      Delete Post
+                      Bericht Verwijderen
                     </Button>
                   )}
                   <Button
@@ -580,7 +581,7 @@ export const AddEditModal: FC<{
                     secondary={true}
                     disabled={selectedIntegrations.length === 0}
                   >
-                    Save as draft
+                    Opslaan als concept
                   </Button>
 
                   <Button
@@ -594,11 +595,11 @@ export const AddEditModal: FC<{
                     <div className="flex justify-center items-center gap-[5px] h-full">
                       <div className="h-full flex items-center text-white">
                         {!canSendForPublication
-                          ? 'Not matching order'
+                          ? 'Niet overeenkomende bestelling'
                           : postFor
-                          ? 'Submit for order'
+                          ? 'Voor bestelling indienen'
                           : !existingData.integration
-                          ? 'Add to calendar'
+                          ? 'Voeg toe aan kalender'
                           : 'Update'}
                       </div>
                       {!postFor && (
@@ -619,7 +620,7 @@ export const AddEditModal: FC<{
                             onClick={postNow}
                             className="hidden group-hover:flex hover:flex flex-col justify-center absolute left-0 top-[100%] w-full h-[40px] bg-customColor22 border border-tableBorder"
                           >
-                            Post now
+                           Nu plaatsen
                           </div>
                         </div>
                       )}

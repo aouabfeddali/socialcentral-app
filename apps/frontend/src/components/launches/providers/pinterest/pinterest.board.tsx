@@ -31,12 +31,12 @@ export const PinterestBoard: FC<{
   }
 
   if (!orgs.length) {
-    return 'No boards found, you have to create a board first';
+    return 'Geen boards gevonden, je moet eerst een board maken';
   }
 
   return (
-    <Select name={name} label="Select board" onChange={onChangeInner} value={currentMedia}>
-      <option value="">--Select--</option>
+    <Select name={name} label="Selecteer board" onChange={onChangeInner} value={currentMedia}>
+      <option value="">--Selecteer--</option>
       {orgs.map((org: any) => (
         <option key={org.id} value={org.id}>
           {org.name}

@@ -13,7 +13,7 @@ export const Submitted: FC<{
   const fetch = useFetch();
 
   const cancel = useCallback(async () => {
-    if (!await deleteDialog('Are you sure you want to cancel this publication?', 'Yes')) {
+    if (!await deleteDialog('Weet je zeker dat je deze publicatie wilt annuleren?', 'Yes')) {
       return ;
     }
     await fetch(`/marketplace/posts/${postId}/cancel`, {
@@ -33,7 +33,7 @@ export const Submitted: FC<{
       secondary={true}
       onClick={cancel}
     >
-      Cancel publication
+      Publicatie Annuleren
     </Button>
   );
 };

@@ -5,7 +5,7 @@ export default withProvider(
   undefined,
   async (posts) => {
     if (posts.some((p) => p.length > 4)) {
-      return 'There can be maximum 4 pictures in a post.';
+      return 'Er kunnen maximaal 4 afbeeldingen in een post staan.';
     }
 
     if (
@@ -13,14 +13,14 @@ export default withProvider(
         (p) => p.some((m) => m.path.indexOf('mp4') > -1) && p.length > 1
       )
     ) {
-      return 'There can be maximum 1 video in a post.';
+      return 'Er kan maximaal 1 video in een post staan.';
     }
 
     for (const load of posts.flatMap((p) => p.flatMap((a) => a.path))) {
       if (load.indexOf('mp4') > -1) {
         const isValid = await checkVideoDuration(load);
         if (!isValid) {
-          return 'Video duration must be less than or equal to 140 seconds.';
+          return 'De videoduur moet minder dan of gelijk aan 140 seconden zijn.';
         }
       }
     }
@@ -46,7 +46,7 @@ const checkVideoDuration = async (url: string): Promise<boolean> => {
     };
 
     video.onerror = () => {
-      reject(new Error('Failed to load video metadata.'));
+      reject(new Error('Het laden van videometadata is mislukt.'));
     };
   });
 };

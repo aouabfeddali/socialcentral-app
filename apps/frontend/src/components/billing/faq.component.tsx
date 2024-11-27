@@ -9,24 +9,24 @@ const useFaqList = () => {
   const {isGeneral} = useVariables();
   return [
     {
-      title: `Can I trust ${isGeneral ? 'Postiz' : 'Gitroom'}?`,
-      description: `${isGeneral ? 'Postiz' : 'Gitroom'} is proudly open-source! We believe in an ethical and transparent culture, meaning that ${isGeneral ? 'Postiz' : 'Gitroom'} will live forever. You can check out the entire code or use it for personal projects. To view the open-source repository, <a href="https://github.com/gitroomhq/postiz-app" target="_blank" style="text-decoration: underline;">click here</a>.`,
+      title: `Kan ik ${isGeneral ? 'Smart Create' : 'Gitroom'} vertrouwen?`,
+      description: `${isGeneral ? 'Smart Create' : 'Gitroom'} is trots onderdeel van Mestanza Group! ${isGeneral ? 'Smart Create' : 'Gitroom'} is bestaan uit de behoefte om zakelijke behoeftes zoals social media management simpel te stroomlijnen. Deze software is ontwikkeld uit een open-source bron, en zal hierdoor altijd vrij zijn van gevaar voor de eindgebruiker.`,
     },
     {
-      title: 'What are channels?',
+      title: 'Wat zijn kanalen?',
       description: `${
-        isGeneral ? 'Postiz' : 'Gitroom'
-      } allows you to schedule your posts between different channels.
-A channel is a publishing platform where you can schedule your posts.
-For example, you can schedule your posts on X, Facebook, Instagram, TikTok, YouTube, Reddit, Linkedin, Dribbble, Threads and Pinterest.`,
+        isGeneral ? 'Smart Create' : 'Gitroom'
+      } stelt je in staat om je berichten in te plannen tussen verschillende kanalen.
+Een kanaal is een publicatieplatform waarop je berichten kunt plannen.
+Bijvoorbeeld, je kunt berichten plannen op X, Facebook, Instagram, TikTok, YouTube, Reddit, LinkedIn, Dribbble, Threads en Pinterest.`,
     },
     {
-      title: 'What are team members?',
-      description: `If you have a team with multiple members, you can invite them to your workspace to collaborate on your posts and add their personal channels`,
+      title: 'Wat zijn teamleden?',
+      description: `Als je een team hebt met meerdere leden, kun je ze uitnodigen om samen te werken in je werkruimte en hun persoonlijke kanalen toe te voegen.`,
     },
     {
-      title: 'What is AI auto-complete?',
-      description: `We automate ChatGPT to help you write your social posts and articles`,
+      title: 'Wat is AI-autocomplete?',
+      description: `We gebruiken OpenAI-API om je te helpen met het schrijven van sociale berichten en artikelen.`,
     },
   ];
 }
@@ -107,7 +107,7 @@ export const FAQComponent: FC = () => {
   return (
     <div>
       <h3 className="text-[24px] text-center mt-[81px] mb-[40px]">
-        Frequently Asked Questions
+      Veelgestelde Vragen
       </h3>
       <div className="gap-[24px] flex-col flex select-none">
         {list.map((item, index) => (

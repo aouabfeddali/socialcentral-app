@@ -32,8 +32,8 @@ export const SlackChannelSelect: FC<{
   }
 
   return (
-    <Select name={name} label="Select Channel" onChange={onChangeInner} value={currentMedia}>
-      <option value="">--Select--</option>
+    <Select name={name} label="Selecteer Kanaal" onChange={onChangeInner} value={currentMedia}>
+      <option value="">--Selecteer--</option>
       {publications.map((publication: any) => (
         <option key={publication.id} value={publication.id}>
           {publication.name}

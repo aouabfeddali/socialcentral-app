@@ -124,15 +124,15 @@ export const PlatformAnalytics = () => {
           <img src="/peoplemarketplace.svg" />
         </div>
         <div className="text-[48px]">
-          Can{"'"}t show analytics yet
+        Analytics kunnen nog niet worden weergegeven
           <br />
-          You have to add Social Media channels
+          Je moet sociale mediakanalen toevoegen
         </div>
         <div className="text-[20px]">
-          Supported: {allowedIntegrations.map((p) => capitalize(p)).join(', ')}
+        Ondersteund: {allowedIntegrations.map((p) => capitalize(p)).join(', ')}
         </div>
         <Button onClick={() => router.push('/launches')}>
-          Go to the calendar to add channels
+        Ga naar de kalender om kanalen toe te voegen
         </Button>
       </div>
     );
@@ -142,13 +142,13 @@ export const PlatformAnalytics = () => {
     <div className="flex gap-[30px] flex-1">
       <div className="p-[16px] bg-customColor48 overflow-hidden flex w-[220px]">
         <div className="flex gap-[16px] flex-col overflow-hidden">
-          <div className="text-[20px] mb-[8px]">Channels</div>
+          <div className="text-[20px] mb-[8px]">Kanalen</div>
           {sortedIntegrations.map((integration, index) => (
             <div
               key={integration.id}
               onClick={() => {
                 if (integration.refreshNeeded) {
-                  toaster.show('Please refresh the integration from the calendar', 'warning');
+                  toaster.show('Vernieuw de integratie vanuit de kalender', 'warning');
                   return ;
                 }
                 setRefresh(true);

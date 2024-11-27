@@ -27,7 +27,7 @@ export const Editor = forwardRef<
 
     useCopilotAction({
       name: 'editPost_' + props.order,
-      description: `Edit the content of post number ${props.order + 1}`,
+      description: `Bewerk de inhoud van berichtnummer ${props.order + 1}`,
       parameters: [
         {
           name: 'content',
@@ -49,9 +49,9 @@ export const Editor = forwardRef<
             )}
             value={props.value}
             onChange={(e) => props?.onChange?.(e.target.value)}
-            placeholder="Write your reply..."
+            placeholder="Schrijf je antwoord..."
             autosuggestionsConfig={{
-              textareaPurpose: `Assist me in writing social media posts.`,
+              textareaPurpose: `Help me bij het schrijven van sociale mediaberichten.`,
               chatApiConfigs: {},
             }}
           />

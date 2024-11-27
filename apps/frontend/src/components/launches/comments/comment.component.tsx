@@ -41,8 +41,8 @@ export const CommentBox: FC<{
     >
       <div className={clsx(type === 'input' && 'flex-1')}>
         <Component
-          label={type === 'textarea' ? 'Add comment' : ''}
-          placeholder={type === 'input' ? 'Add comment' : ''}
+          label={type === 'textarea' ? 'Reactie toevoegen' : ''}
+          placeholder={type === 'input' ? 'Reactie toevoegen' : ''}
           name="comment"
           disableForm={true}
           value={newComment}
@@ -54,7 +54,7 @@ export const CommentBox: FC<{
         onClick={changeIt}
         className={clsx(type === 'input' && 'mb-[27px]')}
       >
-        {value ? 'Update' : 'Add comment'}
+        {value ? 'Bijwerken' : 'Reactie toevoegen'}
       </Button>
     </div>
   );
@@ -88,8 +88,8 @@ export const EditableCommentComponent: FC<{
   const deleteCommentFunction = useCallback(async () => {
     if (
       await deleteDialog(
-        'Are you sure you want to delete this comment?',
-        'Yes, Delete'
+        'Weet je zeker dat je deze reactie wilt verwijderen?',
+        'Ja, Verwijderen'
       )
     ) {
       onDelete();
@@ -277,7 +277,7 @@ export const CommentComponent: FC<{ date: dayjs.Dayjs }> = (props) => {
 
   return (
     <div className="relative flex gap-[20px] flex-col flex-1 rounded-[4px] border border-customColor6 bg-sixth p-[16px] pt-0">
-      <TopTitle title={`Comments for ${date.format('DD/MM/YYYY HH:mm')}`} />
+      <TopTitle title={`Reacties op ${date.format('DD/MM/YYYY HH:mm')}`} />
       <button
         onClick={closeAll}
         className="outline-none absolute right-[20px] top-[15px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"

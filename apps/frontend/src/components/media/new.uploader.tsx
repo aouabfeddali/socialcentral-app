@@ -109,7 +109,7 @@ export function MultipartFileUploaderAfter({
         uppy={uppy}
         locale={{
           strings: {
-            chooseFiles: 'Upload',
+            chooseFiles: 'Uploaden',
           },
           pluralize: (n) => n
         }}

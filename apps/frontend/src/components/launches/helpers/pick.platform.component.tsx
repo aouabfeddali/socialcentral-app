@@ -102,7 +102,7 @@ export const PickPlatforms: FC<{
         if (
           !props.singleSelect &&
           !(await deleteDialog(
-            'Are you sure you want to remove this platform?'
+            'Weet je zeker dat je dit platform wilt verwijderen?'
           ))
         ) {
           return;
@@ -172,8 +172,8 @@ export const PickPlatforms: FC<{
 
   useCopilotReadable({
     description: isMain
-      ? 'All available platforms channels'
-      : 'Possible platforms channels to edit',
+      ? 'Alle beschikbare platformkanalen'
+      : 'Mogelijke platformkanalen om te bewerken',
     value: JSON.stringify(integrations),
   });
 
@@ -181,13 +181,13 @@ export const PickPlatforms: FC<{
     {
       name: isMain ? `addOrRemovePlatform` : 'setSelectedIntegration',
       description: isMain
-        ? `Add or remove channels to schedule your post to, pass all the ids as array`
-        : 'Set selected integrations',
+        ? `Voeg kanalen toe of verwijder kanalen om je bericht in te plannen, geef alle ID's als array door`
+        : 'Stel geselecteerde integraties in',
       parameters: [
         {
           name: 'integrationsId',
           type: 'string[]',
-          description: 'List of integrations id to set as selected',
+          description: "Lijst van integratie-ID's om als geselecteerd in te stellen",
           required: true,
         },
       ],

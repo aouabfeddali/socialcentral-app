@@ -45,7 +45,7 @@ export function ForgotReturn({ token }: { token: string }) {
     if (!reset) {
       form.setError('password', {
         type: 'manual',
-        message: 'Your password reset link has expired. Please try again.',
+        message: 'Je wachtwoordresetlink is verlopen. Probeer het opnieuw.',
       });
 
       return false;
@@ -58,35 +58,35 @@ export function ForgotReturn({ token }: { token: string }) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div>
           <h1 className="text-3xl font-bold text-left mb-4 cursor-pointer">
-            Forgot Password
+          Wachtwoord Vergeten
           </h1>
         </div>
         {!state ? (
           <>
             <div className="space-y-4 text-textColor">
               <Input
-                label="New Password"
+                label="Nieuw Wachtwoord"
                 {...form.register('password')}
                 type="password"
-                placeholder="Password"
+                placeholder="Wachtwoord"
               />
               <Input
-                label="Repeat Password"
+                label="Herhaal Wachtwoord"
                 {...form.register('repeatPassword')}
                 type="password"
-                placeholder="Repeat Password"
+                placeholder="Herhaal Wachtwoord"
               />
             </div>
             <div className="text-center mt-6">
               <div className="w-full flex">
                 <Button type="submit" className="flex-1" loading={loading}>
-                  Change Password
+                Wijzig Wachtwoord
                 </Button>
               </div>
               <p className="mt-4 text-sm">
                 <Link href="/auth/login" className="underline cursor-pointer">
                   {' '}
-                  Go back to login
+                  Ga terug naar inloggen
                 </Link>
               </p>
             </div>
@@ -94,12 +94,12 @@ export function ForgotReturn({ token }: { token: string }) {
         ) : (
           <>
             <div className="text-left mt-6">
-              We successfully reset your password. You can now login with your
+            Je wachtwoord is succesvol gereset. Je kunt nu inloggen met je
             </div>
             <p className="mt-4 text-sm">
               <Link href="/auth/login" className="underline cursor-pointer">
                 {' '}
-                Go back to login
+                Ga terug naar inloggen
               </Link>
             </p>
           </>

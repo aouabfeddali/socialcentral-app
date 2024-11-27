@@ -39,9 +39,9 @@ export default async function Page({
     return (
       <>
         <div className="mt-[50px] text-[50px]">
-          Could not add provider.
+           Kon provider niet toevoegen. 
           <br />
-          You are being redirected back
+          Je wordt teruggestuurd
         </div>
         <Redirect url="/launches" delay={3000} />
       </>

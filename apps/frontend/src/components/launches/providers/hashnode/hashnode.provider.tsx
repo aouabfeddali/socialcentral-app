@@ -64,12 +64,12 @@ const HashnodeSettings: FC = () => {
   const {date} = useIntegration();
   return (
     <>
-      <Input label="Title" {...form.register('title')} />
-      <Input label="Subtitle" {...form.register('subtitle')} />
+      <Input label="Titel" {...form.register('title')} />
+      <Input label="Ondertitel" {...form.register('subtitle')} />
       <Canonical date={date} label="Canonical Link" {...form.register('canonical')} />
       <MediaComponent
-        label="Cover picture"
-        description="Add a cover picture"
+        label="Omslagfoto"
+        description="Omslagfoto toevoegen"
         {...form.register('main_image')}
       />
       <div className="mt-[20px]">

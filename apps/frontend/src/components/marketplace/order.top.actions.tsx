@@ -22,9 +22,9 @@ const schema = object({
       object({
         total: number().required(),
         value: object({
-          value: string().required('Platform is required'),
+          value: string().required('Platform is vereist'),
         }).required(),
-        price: string().matches(/^\d+$/, 'Price must be a number').required(),
+        price: string().matches(/^\d+$/, 'Prijs moet een getal zijn').required(),
       })
     )
     .required(),
@@ -143,7 +143,7 @@ export const NewOrder: FC<{ group: string }> = (props) => {
       })
     ).json();
 
-    toast.show('Offer sent successfully');
+    toast.show('Aanbieding succesvol verzonden');
     modal.closeAll();
   }, []);
 
@@ -182,7 +182,7 @@ export const NewOrder: FC<{ group: string }> = (props) => {
             </svg>
           </button>
           <div className="text-[18px] font-[500] flex flex-col">
-            <TopTitle title={`Send a new offer`} />
+            <TopTitle title={`Stuur een nieuwe aanbieding`} />
             <div className="p-[16px] -mx-[16px]">
               {fields.map((field, index) => (
                 <div className="relative flex gap-[10px]" key={field.id}>
@@ -199,7 +199,7 @@ export const NewOrder: FC<{ group: string }> = (props) => {
                       {...form.register(`socialMedia.${index}.value`)}
                       onChange={change}
                       options={possibleOptions[index]}
-                      placeholder="Select social media"
+                      placeholder="Selecteer sociale media"
                       label="Platform"
                       disableForm={true}
                     />
@@ -214,7 +214,7 @@ export const NewOrder: FC<{ group: string }> = (props) => {
                     <Input
                       icon={<div className="text-[14px]">$</div>}
                       className="text-[14px]"
-                      label="Price per post"
+                      label="Prijs per bericht"
                       error={
                         form.formState.errors?.socialMedia?.[index]?.price
                           ?.message
@@ -247,14 +247,14 @@ export const NewOrder: FC<{ group: string }> = (props) => {
                         />
                       </svg>
                     </div>
-                    <div>Add another platform</div>
+                    <div>Voeg een ander platform toe</div>
                   </div>
                 </div>
               )}
             </div>
             <div className="py-[16px] flex justify-end">
               <Button type="submit" className="rounded-[4px]">
-                Send an offer for ${totalPrice}
+              Stuur een aanbieding voor ${totalPrice}
               </Button>
             </div>
           </div>
@@ -271,7 +271,7 @@ export const OrderInProgress: FC<{ group: string; buyer: boolean, order: string 
   const fetch = useFetch();
 
   const completeOrder = useCallback(async () => {
-    if (await deleteDialog('Are you sure you want to pay the seller and end the order? this is irreversible action')) {
+    if (await deleteDialog('Weet je zeker dat je de verkoper wilt betalen en de bestelling wilt beëindigen? Dit is onomkeerbaar.')) {
       await (
         await fetch(`/marketplace/offer/${order}/complete`, {
           method: 'POST',
@@ -284,11 +284,11 @@ export const OrderInProgress: FC<{ group: string; buyer: boolean, order: string 
     <div className="flex gap-[10px]">
       {buyer && (
         <div onClick={completeOrder} className="rounded-[34px] border-[1px] border-customColor21 !bg-sixth h-[28px] justify-center items-center text-[12px] px-[12px] flex font-[600] cursor-pointer">
-          Complete order and pay early
+          Voltooi bestelling en betaal vroegtijdig
         </div>
       )}
       <div className="h-[28px] justify-center items-center bg-customColor42 text-[12px] px-[12px] flex rounded-[34px] font-[600]">
-        Order in progress
+      Bestelling in uitvoering
       </div>
     </div>
   );
@@ -314,7 +314,7 @@ export const CreateNewOrder: FC<{ group: string }> = (props) => {
       className="h-[28px] justify-center items-center bg-customColor42 text-[12px] px-[12px] flex rounded-[34px] font-[600] cursor-pointer"
       onClick={createOrder}
     >
-      Create a new offer
+      Maak een nieuwe aanbieding
     </div>
   );
 };

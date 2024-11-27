@@ -54,9 +54,9 @@ export const SettingsComponent = () => {
     <div className="flex flex-col gap-[68px]">
       {!isGeneral && (
         <div className="flex flex-col">
-          <h3 className="text-[20px]">Your Git Repository</h3>
+          <h3 className="text-[20px]">Je Git Repository</h3>
           <div className="text-customColor18 mt-[4px]">
-            Connect your GitHub repository to receive updates and analytics
+          Verbind je GitHub repository om updates en analyses te ontvangen
           </div>
           <GithubComponent
             github={loadAll.github}

@@ -177,7 +177,7 @@ export const StarsTableComponent = () => {
             />
           </svg>
         </div>
-        <h2 className="text-[24px]">Stars per day</h2>
+        <h2 className="text-[24px]">Sterren per dag</h2>
         <div
           onClick={changePage('increase')}
           className={clsx(
@@ -211,22 +211,22 @@ export const StarsTableComponent = () => {
             <thead>
               <tr>
                 <th>
-                  <UpDown name="Repository" param="login" />
+                  <UpDown name="Opslagplaats" param="login" />
                 </th>
                 <th>
-                  <UpDown name="Date" param="date" />
+                  <UpDown name="Datum" param="date" />
                 </th>
                 <th>
-                  <UpDown name="Total Stars" param="totalStars" />
+                  <UpDown name="Totaal aantal sterren" param="totalStars" />
                 </th>
                 <th>
-                  <UpDown name="Total Fork" param="totalForks" />
+                  <UpDown name="Totale vork" param="totalForks" />
                 </th>
                 <th>
-                  <UpDown name="Stars" param="stars" />
+                  <UpDown name="Sterren" param="stars" />
                 </th>
                 <th>
-                  <UpDown name="Forks" param="forks" />
+                  <UpDown name="Vorken" param="forks" />
                 </th>
                 <th>Media</th>
               </tr>
@@ -245,7 +245,7 @@ export const StarsTableComponent = () => {
                   <td>{p.forks}</td>
                   <td>
                     <Link href={renderMediaLink(p.date)}>
-                      <Button>Check Launch</Button>
+                      <Button>Lancering controleren</Button>
                     </Link>
                   </td>
                 </tr>
@@ -254,7 +254,7 @@ export const StarsTableComponent = () => {
           </table>
         ) : (
           <div className="py-[24px] px-[16px]">
-            Load your GitHub repository from settings to see analytics
+           Laad je GitHub-repository vanuit de instellingen om analyses te bekijken
           </div>
         )}
       </div>

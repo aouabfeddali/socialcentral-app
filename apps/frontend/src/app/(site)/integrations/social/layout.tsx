@@ -7,7 +7,7 @@ export default async function IntegrationLayout({
 }) {
   return (
     <div className="text-6xl text-center mt-[50px]">
-      Adding channel, Redirecting You{children}
+      Kanaal toevoegen, Doorverwijzing...{children}
     </div>
   );
 }

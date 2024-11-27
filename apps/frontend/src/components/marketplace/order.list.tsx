@@ -26,15 +26,15 @@ export const OrderList: FC<{ type: 'seller' | 'buyer' }> = (props) => {
 
   return (
     <div className="bg-sixth p-[24px] flex flex-col gap-[24px] border border-customColor6 rounded-[4px]">
-      <h3 className="text-[24px]">Orders</h3>
+      <h3 className="text-[24px]">Bestellingen</h3>
       <div className="pt-[20px] px-[24px] border border-customColor6 flex">
         <table className="w-full">
           <tr>
             <td colSpan={biggerRow + 1} className="pb-[20px]">
-              {type === 'seller' ? 'Buyer' : 'Seller'}
+              {type === 'seller' ? 'Koper' : 'Verkoper'}
             </td>
-            <td className="pb-[20px]">Price</td>
-            <td className="pb-[20px]">State</td>
+            <td className="pb-[20px]">Prijs</td>
+            <td className="pb-[20px]">Status</td>
           </tr>
           {data.orders.map((order: any) => (
             <tr key={order.id}>

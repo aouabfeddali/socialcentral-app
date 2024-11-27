@@ -36,7 +36,7 @@ const GenerateTab = observer(({ store }: any) => {
     }
 
     if (!inputRef.current.value) {
-      toast.show('Please type your prompt', 'warning');
+      toast.show('Voer je prompt in', 'warning');
       return ;
     }
     setLoading(true);
@@ -51,7 +51,7 @@ const GenerateTab = observer(({ store }: any) => {
 
     setLoading(false);
     if (!req.ok) {
-      alert('Something went wrong, please try again later...');
+      alert('Something went wrong, please try again later...Er is iets misgegaan, probeer het later opnieuw...');
       return;
     }
     mutate();
@@ -62,10 +62,10 @@ const GenerateTab = observer(({ store }: any) => {
   return (
     <>
       <div style={{ height: '40px', paddingTop: '5px' }}>
-        Generate image with AI {data?.credits ? `(${data?.credits} left)` : ``}
+      Genereer afbeelding met AI {data?.credits ? `(${data?.credits} left)` : ``}
       </div>
       <InputGroup
-        placeholder="Type your image generation prompt here..."
+        placeholder="Typ hier je prompt voor beeldgeneratie..."
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             handleGenerate();
@@ -81,7 +81,7 @@ const GenerateTab = observer(({ store }: any) => {
         loading={loading} innerClassName="invert"
         style={{ marginBottom: '40px' }}
       >
-        {data?.credits <= 0 ? 'Click to purchase more credits' : 'Generate'}
+        {data?.credits <= 0 ? 'Klik om meer credits aan te schaffen' : 'Genereren'}
       </Button>
       {image && (
         <ImagesGrid
@@ -142,7 +142,7 @@ const PictureGeneratorPanel = observer(({ store }: any) => {
 export const PictureGeneratorSection = {
   name: 'picture-generator-ai',
   Tab: (props: any) => (
-    <SectionTab name="AI Img" {...props}>
+    <SectionTab name="AI Afb" {...props}>
       <Clean />
     </SectionTab>
   ),

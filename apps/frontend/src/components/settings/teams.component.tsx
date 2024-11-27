@@ -63,13 +63,13 @@ export const AddMember = () => {
 
       if (values.sendEmail) {
         modals.closeAll();
-        toast.show('Invitation link sent');
+        toast.show('Uitnodigingslink verzonden');
         return;
       }
 
       copy(url);
       modals.closeAll();
-      toast.show('Link copied to clipboard');
+      toast.show('Link gekopieerd naar klembord');
     },
     []
   );
@@ -82,7 +82,7 @@ export const AddMember = () => {
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(submit)}>
         <div className="relative flex gap-[10px] flex-col flex-1 rounded-[4px] border border-customColor6 bg-sixth p-[16px] pt-0">
-          <TopTitle title="Add Member" />
+          <TopTitle title="Lid Toevoegen" />
           <button
             onClick={closeModal}
             className="outline-none absolute right-[20px] top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"
@@ -105,10 +105,10 @@ export const AddMember = () => {
           </button>
 
           {sendEmail && (
-            <Input label="Email" placeholder="Enter email" name="email" />
+            <Input label="Email" placeholder="Voer e-mailadres in" name="email" />
           )}
-          <Select label="Role" name="role">
-            <option value="">Select Role</option>
+          <Select label="Rol" name="role">
+            <option value="">Selecteer Rol</option>
             {roles.map((role) => (
               <option key={role.value} value={role.value}>
                 {role.name}
@@ -119,10 +119,10 @@ export const AddMember = () => {
             <div>
               <Checkbox name="sendEmail" />
             </div>
-            <div>Send invitation via email?</div>
+            <div>Uitnodiging via e-mail versturen?</div>
           </div>
           <Button type="submit" className="mt-[18px]">
-            {sendEmail ? 'Send Invitation Link' : 'Copy Link'}
+            {sendEmail ? 'Stuur Uitnodigingslink' : 'Link Kopiëren'}
           </Button>
         </div>
       </form>
@@ -169,7 +169,7 @@ export const TeamsComponent = () => {
     (toRemove: { user: { id: string } }) => async () => {
       if (
         !(await deleteDialog(
-          'Are you sure you want to remove this team member?'
+          'Weet je zeker dat je dit teamlid wilt verwijderen?'
         ))
       ) {
         return;
@@ -186,10 +186,10 @@ export const TeamsComponent = () => {
 
   return (
     <div className="flex flex-col">
-      <h2 className="text-[24px] mb-[24px]">Team Members</h2>
-      <h3 className="text-[20px]">Account Managers</h3>
+      <h2 className="text-[24px] mb-[24px]">Teamleden</h2>
+      <h3 className="text-[20px]">Accountmanagers</h3>
       <div className="text-customColor18 mt-[4px]">
-        Invite your assistant or team member to manage your account
+      Nodig je assistent of teamlid uit om je account te beheren
       </div>
       <div className="my-[16px] mt-[16px] bg-sixth border-fifth border rounded-[4px] p-[24px] flex flex-col gap-[24px]">
         <div className="flex flex-col gap-[16px]">
@@ -226,7 +226,7 @@ export const TeamsComponent = () => {
                           />
                         </svg>
                       </div>
-                      <div>Remove</div>
+                      <div>Verwijderen</div>
                     </div>
                   </Button>
                 </div>
@@ -238,7 +238,7 @@ export const TeamsComponent = () => {
         </div>
         <div>
           <Button className="rounded-[4px]" onClick={addMember}>
-            Add another member
+          Nog een lid toevoegen
           </Button>
         </div>
       </div>

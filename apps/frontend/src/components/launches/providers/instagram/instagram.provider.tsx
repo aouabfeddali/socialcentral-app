@@ -6,7 +6,7 @@ export default withProvider(
   undefined,
   async ([firstPost, ...otherPosts]) => {
     if (!firstPost.length) {
-      return 'Instagram should have at least one media';
+      return 'Instagram moet minstens één mediabestand hebben';
     }
 
     return true;

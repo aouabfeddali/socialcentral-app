@@ -51,7 +51,7 @@ export const Chart: FC<{ list: StarsList[] | ForksList[] }> = (props) => {
           {
             borderColor: '#fff',
             // @ts-ignore
-            label: list?.[0]?.totalForks ? 'Forks by date' : 'Stars by date',
+            label: list?.[0]?.totalForks ? 'Forks per datum' : 'Sterren per datum',
             backgroundColor: gradient,
             fill: true,
             // @ts-ignore

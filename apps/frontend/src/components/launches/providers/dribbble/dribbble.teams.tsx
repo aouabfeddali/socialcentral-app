@@ -35,8 +35,8 @@ export const DribbbleTeams: FC<{
   }
 
   return (
-    <Select name={name} label="Select a team" onChange={onChangeInner} value={currentMedia}>
-      <option value="">--Select--</option>
+    <Select name={name} label="Selecteer een team" onChange={onChangeInner} value={currentMedia}>
+      <option value="">--Selecteer--</option>
       {orgs.map((org: any) => (
         <option key={org.id} value={org.id}>
           {org.name}

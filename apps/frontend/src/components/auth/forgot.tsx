@@ -43,29 +43,29 @@ export function Forgot() {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div>
           <h1 className="text-3xl font-bold text-left mb-4 cursor-pointer">
-            Forgot Password
+          Wachtwoord Vergeten
           </h1>
         </div>
         {!state ? (
           <>
             <div className="space-y-4 text-textColor">
               <Input
-                label="Email"
+                label="E-mail"
                 {...form.register('email')}
                 type="email"
-                placeholder="Email Address"
+                placeholder="E-mailadres"
               />
             </div>
             <div className="text-center mt-6">
               <div className="w-full flex">
                 <Button type="submit" className="flex-1" loading={loading}>
-                  Send Password Reset Email
+                Stuur Wachtwoord Reset E-mail
                 </Button>
               </div>
               <p className="mt-4 text-sm">
                 <Link href="/auth/login" className="underline cursor-pointer">
                   {' '}
-                  Go back to login
+                  Ga terug naar inloggen
                 </Link>
               </p>
             </div>
@@ -73,12 +73,12 @@ export function Forgot() {
         ) : (
           <>
             <div className="text-left mt-6">
-              We have send you an email with a link to reset your password.
+            We hebben je een e-mail gestuurd met een link om je wachtwoord te resetten.
             </div>
             <p className="mt-4 text-sm">
               <Link href="/auth/login" className="underline cursor-pointer">
                 {' '}
-                Go back to login
+                Ga terug naar inloggen
               </Link>
             </p>
           </>

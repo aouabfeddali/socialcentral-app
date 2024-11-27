@@ -32,8 +32,8 @@ export const SelectOrganization: FC<{
   }
 
   return (
-    <Select name={name} label="Select organization" onChange={onChangeInner} value={currentMedia}>
-      <option value="">--Select--</option>
+    <Select name={name} label="Selecteer organisatie" onChange={onChangeInner} value={currentMedia}>
+      <option value="">--Selecteer--</option>
       {orgs.map((org: any) => (
         <option key={org.id} value={org.id}>
           {org.name}

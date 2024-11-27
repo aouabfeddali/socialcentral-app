@@ -1,12 +1,12 @@
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-  title: 'Error',
+  title: 'Fout',
   description: '',
 }
 
 export default async function Page() {
     return (
-        <div>We are experiencing some difficulty, try to refresh the page</div>
+        <div>We ondervinden wat problemen, probeer de pagina te verversen</div>
     )
 }

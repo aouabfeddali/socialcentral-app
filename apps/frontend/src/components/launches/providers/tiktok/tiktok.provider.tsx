@@ -17,19 +17,19 @@ import clsx from 'clsx';
 const privacyLevel = [
   {
     value: 'PUBLIC_TO_EVERYONE',
-    label: 'Public to everyone',
+    label: 'Openbaar voor iedereen',
   },
   {
     value: 'MUTUAL_FOLLOW_FRIENDS',
-    label: 'Mutual follow friends',
+    label: 'Gedeelde vrienden',
   },
   {
     value: 'FOLLOWER_OF_CREATOR',
-    label: 'Follower of creator',
+    label: 'Volgers van maker',
   },
   {
     value: 'SELF_ONLY',
-    label: 'Self only',
+    label: 'Alleen ik',
   },
 ];
 
@@ -90,7 +90,7 @@ const CheckTikTokValidity: FC<{ picture: string }> = (props) => {
     <>
       {isValidVideo === false && (
         <div className="text-red-600 my-[20px]">
-          Video length is invalid, must be up to {maxVideoLength} seconds
+          Ongeldige videolengte, moet maximaal {maxVideoLength} seconden zijn
         </div>
       )}
       <video
@@ -114,12 +114,12 @@ const TikTokSettings: FC<{ values?: any }> = (props) => {
     <div className="flex flex-col">
       <CheckTikTokValidity picture={props?.values?.[0]?.image?.[0]?.path} />
       <Select
-        label="Who can see this video?"
+        label="Wie kan deze video bekijken?"
         {...register('privacy_level', {
           value: 'PUBLIC_TO_EVERYONE',
         })}
       >
-        <option value="">Select</option>
+        <option value="">Selecteren</option>
         {privacyLevel.map((item) => (
           <option key={item.value} value={item.value}>
             {item.label}
@@ -127,7 +127,7 @@ const TikTokSettings: FC<{ values?: any }> = (props) => {
         ))}
       </Select>
       <hr className="mb-[15px] border-tableBorder" />
-      <div className="text-[14px] mb-[10px]">Allow User To:</div>
+      <div className="text-[14px] mb-[10px]">Gebruiker toestaan om:</div>
       <div className="flex gap-[40px]">
         <Checkbox
           variant="hollow"
@@ -144,7 +144,7 @@ const TikTokSettings: FC<{ values?: any }> = (props) => {
           })}
         />
         <Checkbox
-          label="Comments"
+          label="Reacties"
           variant="hollow"
           {...register('comment', {
             value: false,
@@ -155,7 +155,7 @@ const TikTokSettings: FC<{ values?: any }> = (props) => {
       <div className="flex flex-col">
         <Checkbox
           variant="hollow"
-          label="Disclose Video Content"
+          label="Video-inhoud Openbaar Maken"
           {...register('disclose', {
             value: false,
           })}
@@ -177,46 +177,45 @@ const TikTokSettings: FC<{ values?: any }> = (props) => {
               </svg>
             </div>
             <div>
-              Your video will be labeled {'"'}Promotional Content{'"'}.<br />
-              This cannot be changed once your video is posted.
+            Je video wordt gelabeld als Promotionele Inhoud{'"'}.<br />
+            Dit kan niet worden aangepast nadat je video is geplaatst.
             </div>
           </div>
         )}
         <div className="text-[14px] my-[10px] text-balance">
-          Turn on to disclose that this video promotes good or services in
-          exchange for something of value. You video could promote yourself, a
-          third party, or both.
+        Schakel in om te vermelden dat deze video goederen of diensten promoot in ruil voor iets van waarde. Je video kan jezelf, een derde partij, of beide promoten.
+         
         </div>
       </div>
 
       <div className={clsx(!disclose && 'invisible', 'mt-[20px]')}>
         <Checkbox
           variant="hollow"
-          label="Your brand"
+          label="Jouw merk"
           {...register('brand_organic_toggle', {
             value: false,
           })}
         />
         <div className="text-balance my-[10px] text-[14px]">
-          You are promoting yourself or your own brand.
+        Je promoot jezelf of je eigen merk.
           <br />
-          This video will be classified as Brand Organic.
+          Deze video wordt geclassificeerd als Organische Merkvideo.
         </div>
         <Checkbox
           variant="hollow"
-          label="Branded content"
+          label="Gesponsorde inhoud"
           {...register('brand_content_toggle', {
             value: false,
           })}
         />
         <div className="text-balance my-[10px] text-[14px]">
-          You are promoting another brand or a third party.
+        Je promoot een ander merk of een derde partij.
           <br />
-          This video will be classified as Branded Content.
+          Deze video wordt geclassificeerd als Gesponsorde Inhoud.
         </div>
         {(brand_organic_toggle || brand_content_toggle) && (
           <div className="my-[10px] text-[14px] text-balance">
-            By posting, you agree to TikTok{"'"}s{' '}
+            Door te posten, ga je akkoord met TikTok's{' '}
             {[
               brand_organic_toggle || brand_content_toggle ? (
                 <a
@@ -224,17 +223,17 @@ const TikTokSettings: FC<{ values?: any }> = (props) => {
                   className="text-[#B69DEC] hover:underline"
                   href="https://www.tiktok.com/legal/page/global/music-usage-confirmation/en"
                 >
-                  Music Usage Confirmation
+                  Bevestiging Muziekgebruik
                 </a>
               ) : undefined,
-              brand_content_toggle ? <> and </> : undefined,
+              brand_content_toggle ? <> en </> : undefined,
               brand_content_toggle ? (
                 <a
                   target="_blank"
                   className="text-[#B69DEC] hover:underline"
                   href="https://www.tiktok.com/legal/page/global/bc-policy/en"
                 >
-                  Branded Content Policy
+                  Beleid voor Gesponsorde Inhoud
                 </a>
               ) : undefined,
             ].filter((f) => f)}
@@ -253,15 +252,15 @@ export default withProvider(
     const [firstItems] = items;
 
     if (items.length !== 1) {
-      return 'Tiktok items should be one';
+      return 'TikTok-items moeten één zijn';
     }
 
     if (items[0].length !== 1) {
-      return 'You need one media';
+      return 'Je hebt één mediabestand nodig';
     }
 
     if (firstItems[0].path.indexOf('mp4') === -1) {
-      return 'Item must be a video';
+      return 'Het item moet een video zijn';
     }
 
     return true;

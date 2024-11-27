@@ -308,7 +308,7 @@ export const CalendarColumn: FC<{
       }
 
       toaster.show(
-        "Can't change date, remove post from publication",
+        "Datum kan niet worden gewijzigd, verwijder bericht uit publicatie",
         'warning'
       );
     },
@@ -630,7 +630,7 @@ export const CommentBox: FC<{ totalComments: number; date: dayjs.Dayjs }> = (
       <div
         onClick={openCommentsModal}
         data-tooltip-id="tooltip"
-        data-tooltip-content="Add / View comments"
+        data-tooltip-content="Reacties Toevoegen/Bekijken"
         className={clsx(
           'group absolute right-0 bottom-0 w-[20px] h-[20px] z-[10] hover:opacity-95 cursor-pointer hover:right-[3px] hover:bottom-[3px] transition-all duration-300 ease-in-out',
           totalComments === 0 ? 'opacity-50' : 'opacity-95'

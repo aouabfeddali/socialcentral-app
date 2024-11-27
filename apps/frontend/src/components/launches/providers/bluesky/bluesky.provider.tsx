@@ -2,7 +2,7 @@ import { withProvider } from '@gitroom/frontend/components/launches/providers/hi
 
 export default withProvider(null, undefined, undefined, async (posts) => {
   if (posts.some((p) => p.length > 4)) {
-    return 'There can be maximum 4 pictures in a post.';
+    return 'Er kunnen maximaal 4 afbeeldingen in een bericht zitten.';
   }
 
   return true;

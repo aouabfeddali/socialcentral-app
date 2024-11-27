@@ -83,7 +83,8 @@ const RedditPreview: FC = (props) => {
   });
 
   if (!settings || !settings.length) {
-    return <>Please add at least one Subreddit from the settings</>;
+    return <>Voeg ten minste één subreddit toe vanuit de instellingen
+</>;
   }
 
   return (
@@ -169,7 +170,7 @@ const RedditSettings: FC = () => {
   const deleteField = useCallback(
     (index: number) => async () => {
       if (
-        !(await deleteDialog('Are you sure you want to delete this Subreddit?'))
+        !(await deleteDialog('Weet je zeker dat je deze Subreddit wilt verwijderen?'))
       )
         return;
       remove(index);
@@ -192,10 +193,10 @@ const RedditSettings: FC = () => {
           </div>
         ))}
       </div>
-      <Button onClick={addField}>Add Subreddit</Button>
+      <Button onClick={addField}>Subreddit Toevoegen</Button>
       {fields.length === 0 && (
         <div className="text-red-500 text-[12px] mt-[10px]">
-          Please add at least one Subreddit
+          Voeg minstens één Subreddit toe
         </div>
       )}
     </>

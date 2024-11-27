@@ -10,10 +10,10 @@ const PinterestSettings: FC = () => {
   const { register, control } = useSettings();
   return (
     <div className="flex flex-col">
-      <Input label={'Title'} {...register('title')} />
+      <Input label={'Titel'} {...register('title')} />
       <PinterestBoard {...register('board')} />
       <ColorPicker
-        label="Select Pin Color"
+        label="Selecteer kleur van Pin"
         name="dominant_color"
         enabled={false}
         canBeCancelled={true}
@@ -33,19 +33,19 @@ export default withProvider(
     );
 
     if (firstItem.length === 0) {
-      return 'Pinterest requires at least one media';
+      return 'Pinterest vereist minstens één mediabestand';
     }
 
     if (isMp4 && firstItem.length !== 2 && !isPicture) {
-      return 'If posting a video to Pinterest you have to also include a cover image as second media';
+      return 'Als je een video naar Pinterest plaatst, moet je ook een omslagfoto toevoegen als tweede mediabestand';
     }
 
     if (isMp4 && firstItem.length > 2) {
-      return 'If posting a video to Pinterest you can only have two media items';
+      return 'Als je een video naar Pinterest plaatst, kun je maximaal twee mediabestanden hebben';
     }
 
     if (otherItems.length) {
-      return 'Pinterest can only have one post';
+      return 'Pinterest kan slechts één bericht bevatten';
     }
 
     if (
@@ -71,7 +71,7 @@ export default withProvider(
       });
 
       if (!checkAllTheSameWidthHeight) {
-        return 'Pinterest requires all images to have the same width and height';
+        return 'Pinterest vereist dat alle afbeeldingen dezelfde breedte en hoogte hebben';
       }
     }
 

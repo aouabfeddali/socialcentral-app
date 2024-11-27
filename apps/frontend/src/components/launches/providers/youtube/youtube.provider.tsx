@@ -8,16 +8,16 @@ import { MediaComponent } from '@gitroom/frontend/components/media/media.compone
 import { Select } from '@gitroom/react/form/select';
 
 const type = [
-  { label: 'Public', value: 'public' },
-  { label: 'Private', value: 'private' },
-  { label: 'Unlisted', value: 'unlisted' },
+  { label: 'Openbaar', value: 'public' },
+  { label: 'Privé', value: 'private' },
+  { label: 'Niet vermeld', value: 'unlisted' },
 ];
 
 const YoutubeSettings: FC = () => {
   const { register, control } = useSettings();
   return (
     <div className="flex flex-col">
-      <Input label="Title" {...register('title')} />
+      <Input label="Titel" {...register('title')} />
       <Select label="Type" {...register('type', { value: 'public' })}>
         {type.map((t) => (
           <option key={t.value} value={t.value}>
@@ -31,8 +31,8 @@ const YoutubeSettings: FC = () => {
           type="image"
           width={1280}
           height={720}
-          label="Thumbnail"
-          description="Thumbnail picture (optional)"
+          label="Miniatuur"
+          description="Miniatuurafbeelding (optioneel)"
           {...register('thumbnail')}
         />
       </div>
@@ -48,15 +48,15 @@ export default withProvider(
     const [firstItems] = items;
 
     if (items.length !== 1) {
-      return 'Youtube items should be one';
+      return 'YouTube-items moeten één zijn';
     }
 
     if (items[0].length !== 1) {
-      return 'You need one media';
+      return 'Je hebt één mediabestand nodig';
     }
 
     if (firstItems[0].path.indexOf('mp4') === -1) {
-      return 'Item must be a video';
+      return 'Het item moet een video zijn';
     }
 
     return true;

@@ -55,8 +55,8 @@ function LayoutContextInner(params: { children: ReactNode }) {
             (
               await response.json()
             ).message,
-            'Move to billing',
-            'Payment Required'
+            'Ga naar facturering',
+            'Betaling Vereist'
           )
         ) {
           window.open('/billing', '_blank');

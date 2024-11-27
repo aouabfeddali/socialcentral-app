@@ -66,7 +66,7 @@ export const Step: FC<{
         </div>
       </div>
       <div className="mb-[4px] text-[10px] text-customColor18 tracking-[1.2px]">
-        STEP {step}
+      STAP {step}
       </div>
       <div
         className={clsx('text-[12px]', step > currentStep && 'text-inputText')}
@@ -109,7 +109,7 @@ const SkipOnboarding: FC = () => {
       className="border-[2px] border-customColor21"
       onClick={onSkip}
     >
-      Skip onboarding
+      Onboarding Overslaan
     </Button>
   );
 };
@@ -165,7 +165,7 @@ const Welcome: FC = () => {
         {!isGeneral && (
           <>
             <Step
-              title="Connect Github"
+              title="Github Verbinden"
               step={2}
               currentStep={step}
               lastStep={4}
@@ -174,18 +174,18 @@ const Welcome: FC = () => {
           </>
         )}
         <Step
-          title="Connect Channels"
+          title="Kanalen Verbinden"
           step={3 - (isGeneral ? 1 : 0)}
           currentStep={step}
           lastStep={4}
         />
         <StepSpace />
-        <Step title="Finish" step={4 - (isGeneral ? 1 : 0)} currentStep={step} lastStep={lastStep} />
+        <Step title="Voltooien" step={4 - (isGeneral ? 1 : 0)} currentStep={step} lastStep={lastStep} />
         {seller && (
           <>
             <StepSpace />
             <Step
-              title="Sell Posts"
+              title="Berichten Verkopen"
               step={5- (isGeneral ? 1 : 0)}
               currentStep={step}
               lastStep={lastStep}
@@ -209,7 +209,7 @@ const Welcome: FC = () => {
           <GithubOnboarding />
           <div className="flex justify-end gap-[8px]">
             <SkipOnboarding />
-            <Button onClick={nextStep()}>Next</Button>
+            <Button onClick={nextStep()}>Volgende</Button>
           </div>
         </div>
       )}
@@ -218,7 +218,7 @@ const Welcome: FC = () => {
           <ConnectChannels />
           <div className="flex justify-end gap-[8px]">
             <SkipOnboarding />
-            <Button onClick={nextStep()}>Next</Button>
+            <Button onClick={nextStep()}>Volgende</Button>
           </div>
         </div>
       )}
@@ -228,34 +228,34 @@ const Welcome: FC = () => {
             <img src="/success.svg" alt="success" />
           </div>
           <div className="text-[18px] text-center">
-            You are done, from here you can:
+          Je bent klaar, vanaf hier kun je:
           </div>
           <div className="flex flex-col gap-[8px]">
             <div className={clsx(isGeneral ? "grid" : "grid grid-cols-2 gap-[8px]")}>
               {!isGeneral && (
-                <Button onClick={goToAnalytics}>View Analytics</Button>
+                <Button onClick={goToAnalytics}>Bekijk Analytics</Button>
               )}
-              <Button onClick={goToLaunches}>Schedule a new post</Button>
+              <Button onClick={goToLaunches}>Plan een nieuw bericht in</Button>
             </div>
 
             <div className="grid grid-cols-2 gap-[8px]">
-              <Button onClick={buyPosts}>Buy posts from Influencers</Button>
-              <Button onClick={sellPosts}>Sell your services</Button>
+              <Button onClick={buyPosts}>Koop berichten van Influenza</Button>
+              <Button onClick={sellPosts}>Verkoop je diensten</Button>
             </div>
           </div>
         </div>
       )}
       {step === 5 - (isGeneral ? 1 : 0) && (
         <div>
-          <div className="text-[24px] mb-[24px]">To sell posts you would have to:</div>
+          <div className="text-[24px] mb-[24px]">Om berichten te verkopen moet je:</div>
           <ul>
-            <li>1. Connect at least one channel</li>
-            <li>2. Connect you bank account</li>
+            <li>1. Minimaal één kanaal verbinden</li>
+            <li>2. Je bankrekening verbinden</li>
           </ul>
 
           <div className="grid grid-cols-2 gap-[8px] mt-[24px]">
-            <Button onClick={() => setStep(isGeneral ? 2 : 3)}>Go back to connect channels</Button>
-            <Button onClick={connectBankAccount}>Move to the seller page to connect you bank</Button>
+            <Button onClick={() => setStep(isGeneral ? 2 : 3)}>Ga terug om kanalen te verbinden</Button>
+            <Button onClick={connectBankAccount}>Ga naar de verkoperspagina om je bank te verbinden</Button>
           </div>
         </div>
       )}

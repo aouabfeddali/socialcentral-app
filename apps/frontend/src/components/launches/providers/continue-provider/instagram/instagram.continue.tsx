@@ -63,19 +63,18 @@ export const InstagramContinue: FC<{
   if (!isLoading && !data?.length) {
     return (
       <div className="text-center flex justify-center items-center text-[18px] leading-[50px] h-[300px]">
-        We couldn{"'"}t find any business connected to the selected pages.
+       We konden geen bedrijf vinden dat is gekoppeld aan de geselecteerde pagina's.
         <br />
-        We recommend you to connect all the pages and all the businesses.
+        We raden je aan om alle pagina's en bedrijven te koppelen.
         <br />
-        Please close this dialog, delete your integration and add a new channel
-        again.
+        Sluit dit venster, verwijder je integratie en voeg opnieuw een kanaal toe.
       </div>
     );
   }
 
   return (
     <div className="flex flex-col gap-[20px]">
-      <div>Select Instagram Account:</div>
+      <div>Selecteer Instagram-account:</div>
       <div className="grid grid-cols-3 justify-items-center select-none cursor-pointer">
         {filteredData?.map(
           (p: {
@@ -107,7 +106,7 @@ export const InstagramContinue: FC<{
       </div>
       <div>
         <Button disabled={!page} onClick={saveInstagram}>
-          Save
+        Opslaan
         </Button>
       </div>
     </div>

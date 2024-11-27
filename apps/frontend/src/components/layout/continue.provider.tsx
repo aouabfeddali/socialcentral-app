@@ -55,7 +55,7 @@ export const ContinueProvider: FC = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="w-full h-full relative">
-          <TopTitle title="Configure Provider" />
+          <TopTitle title="Provider Configureren" />
           <button
             onClick={closeModal}
             className="outline-none absolute right-0 top-[20px] mantine-UnstyledButton-root mantine-ActionIcon-root hover:bg-tableBorder cursor-pointer mantine-Modal-close mantine-1dcetaa"

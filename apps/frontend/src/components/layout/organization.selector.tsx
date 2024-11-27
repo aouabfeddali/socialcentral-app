@@ -48,7 +48,7 @@ export const OrganizationSelector = () => {
   return (
     <div className="bg-third h-[48px] flex items-center min-w-[172px] select-none relative group">
       <div className="border-tableBorder py-[8px] px-[12px] border w-full h-full flex items-center">
-        <div className="flex-1">{current?.name || 'Loading...'}</div>
+        <div className="flex-1">{current?.name || 'Laden...'}</div>
         {data?.length > 1 && (
           <div>
             <svg

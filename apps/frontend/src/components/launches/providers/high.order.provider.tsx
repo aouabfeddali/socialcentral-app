@@ -93,8 +93,8 @@ export const withProvider = (
     useCopilotReadable({
       description:
         integration?.type === 'social'
-          ? 'force content always in MD format'
-          : 'force content always to be fit to social media',
+          ? 'dwing inhoud altijd in MD-indeling'
+          : 'dwing inhoud altijd passend te maken voor sociale media',
       value: '',
     });
     const [editInPlace, setEditInPlace] = useState(!!existingData.integration);
@@ -203,8 +203,8 @@ export const withProvider = (
       (index: number) => async () => {
         if (
           !(await deleteDialog(
-            'Are you sure you want to delete this post?',
-            'Yes, delete it!'
+            'Weet je zeker dat je dit bericht wilt verwijderen?',
+            'Ja, verwijder het!'
           ))
         ) {
           return;
@@ -222,9 +222,9 @@ export const withProvider = (
       if (
         !(await deleteDialog(
           !editInPlace
-            ? 'Are you sure you want to edit only this?'
-            : 'Are you sure you want to revert it back to global editing?',
-          'Yes, edit in place!'
+            ? 'Weet je zeker dat je alleen dit wilt bewerken?'
+            : 'Weet je zeker dat je het terug wilt zetten naar globale bewerking?',
+          'Ja, bewerk ter plekke!'
         ))
       ) {
         return false;
@@ -247,8 +247,8 @@ export const withProvider = (
         ? 'switchToGlobalEdit'
         : `editInPlace_${integration?.identifier}`,
       description: editInPlace
-        ? 'Switch to global editing'
-        : `Edit only ${integration?.identifier} this, if you want a different identifier, you have to use setSelectedIntegration first`,
+        ? 'Schakel over naar globale bewerking'
+        : `Bewerk alleen ${integration?.identifier} dit, als je een andere identificatie wilt, moet je eerst setSelectedIntegration gebruiken`,
       handler: async () => {
         await changeToEditor();
       },
@@ -271,7 +271,7 @@ export const withProvider = (
                   secondary={showTab !== 0}
                   onClick={() => setShowTab(0)}
                 >
-                  Preview
+                  Voorbeeld
                 </Button>
               </div>
               {!!SettingsComponent && (
@@ -284,7 +284,7 @@ export const withProvider = (
                     secondary={showTab !== 2}
                     onClick={() => setShowTab(2)}
                   >
-                    Settings
+                    Instellingen
                   </Button>
                 </div>
               )}
@@ -295,8 +295,8 @@ export const withProvider = (
                   onClick={changeToEditor}
                 >
                   {editInPlace
-                    ? 'Edit globally'
-                    : `Edit only ${integration?.name} (${capitalize(
+                    ? 'Globaal Bewerken'
+                    : `Alleen Bewerken ${integration?.name} (${capitalize(
                         integration?.identifier.replace('-', ' ')
                       )})`}
                 </Button>
@@ -309,7 +309,7 @@ export const withProvider = (
                 <div className="flex flex-col gap-[20px]">
                   {!existingData?.integration && (
                     <div className="bg-red-800">
-                      You are now editing only {integration?.name} (
+                      Je bewerkt nu alleen {integration?.name} (
                       {capitalize(integration?.identifier.replace('-', ' '))})
                     </div>
                   )}
@@ -339,13 +339,13 @@ export const withProvider = (
                             />
                             {(!val.content || val.content.length < 6) && (
                               <div className="my-[5px] text-customColor19 text-[12px] font-[500]">
-                                The post should be at least 6 characters long
+                                Het bericht moet minimaal 6 tekens lang zijn
                               </div>
                             )}
                             <div className="flex">
                               <div className="flex-1">
                                 <MultiMediaComponent
-                                  label="Attachments"
+                                  label="Bijlagen"
                                   description=""
                                   name="image"
                                   value={val.image}
@@ -373,7 +373,7 @@ export const withProvider = (
                                       </svg>
                                     </div>
                                     <div className="text-[12px] font-[500] pr-[10px]">
-                                      Delete Post
+                                    Bericht Verwijderen
                                     </div>
                                   </div>
                                 )}
@@ -428,7 +428,7 @@ export const withProvider = (
                     />
                   )
                 ) : (
-                  <>No Content Yet</>
+                  <>Nog Geen Inhoud</>
                 )}
               </IntegrationContext.Provider>
             </div>

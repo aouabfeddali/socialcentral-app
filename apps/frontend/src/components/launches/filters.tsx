@@ -196,7 +196,7 @@ export const Filters = () => {
 		  )}
 		  onClick={setDay}
 		>
-		  Day
+		  Dag
 		</div>
 		<div
 		  className={clsx(
@@ -214,7 +214,7 @@ export const Filters = () => {
 		  )}
 		  onClick={setMonth}
 		>
-		  Month
+		  Maand
 		</div>
 	  </div>
     </div>
