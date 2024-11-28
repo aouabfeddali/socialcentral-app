@@ -97,7 +97,7 @@ export const MediaBox: FC<{
       <div className="max-w-[1000px] w-full h-full bg-sixth border-tableBorder border-2 rounded-xl pb-[20px] px-[20px] relative mx-auto">
         <div className="flex flex-col">
           <div className="flex-1">
-            <TopTitle title="Media Library" />
+            <TopTitle title="Mediabibliotheek" />
           </div>
           <button
             onClick={closeModal}
@@ -148,8 +148,8 @@ export const MediaBox: FC<{
         >
           {!mediaList.length && (
             <div className="flex flex-col text-center">
-              <div>You don{"'"}t have any assets yet.</div>
-              <div>Click the button below to upload one</div>
+              <div>Je hebt nog geen bestanden.</div>
+              <div>Klik op de knop hieronder om er een te uploaden</div>
               <div className="mt-[10px] justify-center items-center flex flex-col-reverse gap-[10px]">
                 <MultipartFileUploader
                   onUploadSuccess={mutate}
@@ -285,7 +285,7 @@ export const MultiMediaComponent: FC<{
                   />
                 </svg>
               </div>
-              <div className="text-[12px] font-[500] text-primary">Insert Media</div>
+              <div className="text-[12px] font-[500] text-primary">Media Invoegen</div>
             </Button>
 
             <Button
@@ -306,7 +306,7 @@ export const MultiMediaComponent: FC<{
                   />
                 </svg>
               </div>
-              <div className="text-[12px] font-[500] !text-white">Design Media</div>
+              <div className="text-[12px] font-[500] !text-white">Media Ontwerpen</div>
             </Button>
           </div>
 
@@ -415,12 +415,12 @@ export const MediaComponent: FC<{
         </div>
       )}
       <div className="flex gap-[5px]">
-        <Button onClick={showModal}>Select</Button>
+        <Button onClick={showModal}>Selecteren</Button>
         <Button onClick={showDesignModal} className="!bg-customColor45">
-          Editor
+        Editor
         </Button>
         <Button secondary={true} onClick={clearMedia}>
-          Clear
+        Wissen
         </Button>
       </div>
     </div>
